@@ -13,6 +13,13 @@
         android:theme="@style/Theme.FindIndonesiaTourism"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.splash.SplashOutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
             android:name=".ui.activity.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -25,21 +32,15 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
-
         <activity
             android:name=".ui.activity.maps.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".ui.activity.main.MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.FindIndonesiaTourism">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
