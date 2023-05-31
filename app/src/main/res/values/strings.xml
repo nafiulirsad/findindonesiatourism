@@ -2,6 +2,7 @@
     <string name="app_name">Find Indonesia Tourism</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="titlesplash">Find Indonesia Tourism</string>
+    <string name="mainMessageTextView">Explore and get information on your travel destination easily.</string>
     <string name="loginMessageTextView">Please fill in the account login form to use this application.</string>
     <string name="email">Email address</string>
     <string name="password">Password</string>
@@ -10,4 +11,7 @@
     <string name="messagedonthaveaccount">Don\'t have an account yet? Sign Up</string>
     <string name="login">Login</string>
     <string name="fill_in">Fill In</string>
+    <string name="populerDestination">Populer Destination</string>
+    <string name="signup">Sign Up</string>
+    <string name="signin">Sign In</string>
 </resources>
