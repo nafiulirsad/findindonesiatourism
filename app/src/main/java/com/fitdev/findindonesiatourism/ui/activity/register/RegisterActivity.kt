@@ -14,18 +14,12 @@ import android.widget.Toast
 import com.fitdev.findindonesiatourism.remote.api.ApiConfig
 import com.fitdev.findindonesiatourism.remote.response.register.RegisterResponse
 import com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity
-import com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity.Companion.emailRegex
 import com.fitdev.findindonesiatourism.ui.activity.main.MainActivity
 import com.fitdev.findindonesiatourism.ui.costume.ButtonRegister
 import com.fitdev.findindonesiatourism.ui.costume.EditTextEmail
 import com.fitdev.findindonesiatourism.ui.costume.EditTextPassword
 import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ActivityRegisterBinding
-import okhttp3.FormBody
-import okhttp3.MediaType
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
 import retrofit2.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -123,47 +117,7 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
-//    private fun createRequestBody(): RequestBody {
-//        val email = email.text.toString()
-//        val username = binding.EditTextUsername.text.toString()
-//        val password = password.text.toString()
-//        val phoneNumber = binding.EditTextNumberPhone.text.toString()
-//
-////        val requestBody = RequestBody.create(
-////            "application/raw".toMediaTypeOrNull(), """
-////        {
-////            "username": "$username",
-////            "email": "$email",
-////            "password": "$password",
-////            "phoneNumber": "$phoneNumber"
-////        }
-////    """.trimIndent())
-////
-////        return requestBody
-//
-////        val rawBody = """
-////        {
-////            "email": "$email",
-////            "username": "$username",
-////            "password": "$password",
-////            "phoneNumber": "$phoneNumber"
-////        }
-////    """.trimIndent()
-////
-////        return RequestBody.create("application/raw".toMediaType(), rawBody)
-//
-//        val requestBody = FormBody.Builder()
-//            .add(EMAIL, email)
-//            .add(USERNAME, username)
-//            .add(PASSWORD, password)
-//            .add(PHONE, phoneNumber)
-//            .build()
-//
-//        return requestBody
-//    }
-
     private fun onClickCallback() {
-//        val requestBody = createRequestBody()
         val client = ApiConfig.getApiService().register(
             binding.EditTextUsername.text.toString(),
             email.text.toString(),
@@ -219,11 +173,6 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val EMAIL = "email"
-        const val USERNAME = "username"
-        const val PASSWORD = "password"
-        const val PHONE = "phoneNumber"
-
         val emailRegex: Regex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,3})+\$")
         val passwordRegex: Regex = Regex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}\$")
     }
