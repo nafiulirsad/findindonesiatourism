@@ -1,4 +1,4 @@
-package com.fitdev.findindonesiatourism
+package com.fitdev.myapplication
 
 import org.junit.Test
 

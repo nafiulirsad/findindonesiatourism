@@ -1,15 +1,17 @@
 package com.fitdev.findindonesiatourism.ui.activity.login
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.fitdev.findindonesiatourism.R
-import com.fitdev.findindonesiatourism.databinding.ActivityLoginBinding
 import com.fitdev.findindonesiatourism.ui.costume.ButtonLogin
 import com.fitdev.findindonesiatourism.ui.costume.EditTextEmail
 import com.fitdev.findindonesiatourism.ui.costume.EditTextPassword
+import com.fitdev.myapplication.R
+import com.fitdev.myapplication.databinding.ActivityLoginBinding
+import com.fitdev.findindonesiatourism.ui.activity.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -41,6 +43,14 @@ class LoginActivity : AppCompatActivity() {
         if (!intent.getStringExtra(PASSWORD).isNullOrEmpty()) {
             password.setText(intent.getStringExtra(PASSWORD))
             isPassword = true
+        }
+
+        onclick()
+    }
+
+    private fun onclick() {
+        binding.textView4.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 

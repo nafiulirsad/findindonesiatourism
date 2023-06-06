@@ -3,9 +3,11 @@ package com.fitdev.findindonesiatourism.ui.activity.splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.fitdev.findindonesiatourism.R
-import com.fitdev.findindonesiatourism.databinding.ActivitySplashOutBinding
+import android.os.Handler
+import android.os.Looper
 import com.fitdev.findindonesiatourism.ui.activity.main.MainActivity
+import com.fitdev.myapplication.R
+import com.fitdev.myapplication.databinding.ActivitySplashOutBinding
 
 class SplashOutActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashOutBinding
@@ -16,6 +18,11 @@ class SplashOutActivity : AppCompatActivity() {
         binding = ActivitySplashOutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        startActivity(Intent(this@SplashOutActivity, MainActivity::class.java))
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(
+                Intent(this, MainActivity::class.java)
+            )
+            finish()
+        }, 500)
     }
 }

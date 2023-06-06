@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    tools:context=".ui.activity.splash.SplashActivity">
+    tools:context="com.fitdev.findindonesiatourism.ui.activity.splash.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"

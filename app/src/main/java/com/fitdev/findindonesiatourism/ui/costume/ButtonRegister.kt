@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 import com.fitdev.myapplication.R
 
-class ButtonLogin : AppCompatButton {
+class ButtonRegister  : AppCompatButton {
     private lateinit var enable: Drawable
     private lateinit var disable: Drawable
     private var textColors: Int = 0
@@ -41,7 +41,7 @@ class ButtonLogin : AppCompatButton {
         setTextColor(textColors)
         gravity = Gravity.CENTER
         text = if (isEnabled) {
-            resources.getString(R.string.login)
+            resources.getString(R.string.register)
         } else {
             resources.getString(R.string.fill_in)
         }
@@ -49,7 +49,7 @@ class ButtonLogin : AppCompatButton {
 
     private fun init() {
         textColors = ContextCompat.getColor(context, android.R.color.white)
-        enable = ContextCompat.getDrawable(context, R.drawable.button) as Drawable
+        enable = ContextCompat.getDrawable(context, R.drawable.buttonregister) as Drawable
         disable = ContextCompat.getDrawable(context, R.drawable.button_disable) as Drawable
     }
 }

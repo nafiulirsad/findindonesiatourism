@@ -4,14 +4,24 @@
     <string name="titlesplash">Find Indonesia Tourism</string>
     <string name="mainMessageTextView">Explore and get information on your travel destination easily.</string>
     <string name="loginMessageTextView">Please fill in the account login form to use this application.</string>
+    <string name="registerMessageTextView">Please fill in the account registration form to become a user of this application.</string>
+    <string name="username">Full name</string>
     <string name="email">Email address</string>
     <string name="password">Password</string>
+    <string name="phone">Phone number</string>
+    <string name="usernamehint">Fill in your full name</string>
     <string name="emailhint">Fill in your email address</string>
     <string name="passwordhint">Fill in your password</string>
-    <string name="messagedonthaveaccount">Don\'t have an account yet? Sign Up</string>
+    <string name="phonehint">Fill in your number phone</string>
+    <string name="messagedonthaveaccountmain">Don\'t have an account yet?</string>
+    <string name="messagedonthaveaccount">Don\'t have an account yet? <b>Sign Up</b></string>
+    <string name="messagehaveaccountmain">Already have an account?</string>
+    <string name="messagehaveaccount">Already have an account? <b>Sign In</b></string>
+    <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="fill_in">Fill In</string>
     <string name="populerDestination">Populer Destination</string>
     <string name="signup">Sign Up</string>
     <string name="signin">Sign In</string>
+    <string name="or">or</string>
 </resources>
