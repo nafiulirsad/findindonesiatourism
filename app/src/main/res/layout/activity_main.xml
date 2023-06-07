@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
         android:gravity="center"
         android:text="@string/titlesplash"
         android:textColor="@color/Primary"
-        android:textSize="28sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         android:layout_marginEnd="20dp"
         android:text="@string/mainMessageTextView"
         android:textColor="@color/Primary"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -56,7 +56,7 @@
         android:layout_marginEnd="20dp"
         android:text="@string/populerDestination"
         android:textColor="@color/Primary"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +64,9 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_img"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_margin="16dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
@@ -73,17 +74,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pd" />
 
-    <TextView
+    <LinearLayout
         android:id="@+id/dots_indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:gravity="center_vertical|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vp_img" />
+        app:layout_constraintTop_toBottomOf="@+id/vp_img"
+        android:orientation="horizontal" />
 
     <TextView
         android:id="@+id/textView3"
@@ -94,7 +96,7 @@
         android:layout_marginEnd="20dp"
         android:text="@string/messagedonthaveaccountmain"
         android:textColor="@color/Primary"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dots_indicator" />
@@ -102,14 +104,14 @@
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="35dp"
         android:background="@color/Secondary"
         android:text="@string/signup"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="@color/white"
         android:fontFamily="@font/proppins"
         android:textStyle="bold"
@@ -163,7 +165,7 @@
         android:layout_marginBottom="15dp"
         android:text="@string/messagehaveaccountmain"
         android:textColor="@color/Primary"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -172,7 +174,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
@@ -182,7 +184,7 @@
         android:textColor="@color/white"
         android:fontFamily="@font/proppins"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
