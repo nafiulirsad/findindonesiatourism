@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Find Indonesia Tourism</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="titlesplash">Find Indonesia Tourism</string>
+    <string name="mainMessageTextView">Исследуйте и легко получайте информацию о месте вашего путешествия.</string>
+    <string name="loginMessageTextView">Пожалуйста, заполните форму входа в учетную запись, чтобы использовать это приложение.</string>
+    <string name="registerMessageTextView">Пожалуйста, заполните форму регистрации учетной записи, чтобы стать пользователем этого приложения.</string>
+    <string name="username">Полное имя</string>
+    <string name="email">Адрес электронной почты</string>
+    <string name="password">Пароль</string>
+    <string name="phone">Номер телефона</string>
+    <string name="usernamehint">Введите свое полное имя</string>
+    <string name="emailhint">Заполните свой адрес электронной почты</string>
+    <string name="passwordhint">Введите свой пароль</string>
+    <string name="phonehint">Заполните свой номер телефона</string>
+    <string name="messagedonthaveaccountmain">У вас еще нет аккаунта?</string>
+    <string name="messagedonthaveaccount">У вас еще нет аккаунта? <b>Зарегистрироваться</b></string>
+    <string name="messagehaveaccountmain">У вас уже есть аккаунт?</string>
+    <string name="messagehaveaccount">У вас уже есть аккаунт? <b>Войти</b></string>
+    <string name="register">регистр</string>
+    <string name="or">Или</string>
+    <string name="login">Авторизоваться</string>
+    <string name="fill_in">Заполнять</string>
+    <string name="populerDestination">Популярное направление</string>
+    <string name="signup">Зарегистрироваться</string>
+    <string name="signin">Войти</string>
+    <string name="home">Дом</string>
+    <string name="homeview">Домашний вид</string>
+    <string name="explore">Исследовать</string>
+    <string name="exploreview">Исследуйте вид</string>
+    <string name="category">Категории</string>
+    <string name="categoryview">Категории Посмотреть</string>
+    <string name="favorite">Любимый</string>
+    <string name="favoriteview">Любимый вид</string>
+    <string name="settings">Настройки</string>
+    <string name="profile">Профиль</string>
+    <string name="profileview">Профиль</string>
+    <string name="language">Язык</string>
+    <string name="logout">Выйти</string>
+    <string name="navigation_drawer_open">Открыть панель навигации</string>
+    <string name="navigation_drawer_close">Закрыть панель навигации</string>
+</resources>

@@ -1,9 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.FindIndonesiaTourism" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Base.Theme.FindIndonesiaTourism" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/Primary</item>
         <item name="colorPrimaryVariant">@color/BackgroundMenu</item>
         <item name="colorOnPrimary">@color/white</item>
+    </style>
+    
+    <style name="Theme.AppCompat.ActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
     </style>
 
     <style name="Theme.FindIndonesiaTourism" parent="Base.Theme.FindIndonesiaTourism" />

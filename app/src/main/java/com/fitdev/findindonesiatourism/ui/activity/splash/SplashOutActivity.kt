@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.fitdev.findindonesiatourism.ui.activity.main.MainActivity
+import com.fitdev.findindonesiatourism.ui.activity.drawer.DrawerActivity
 import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ActivitySplashOutBinding
 
@@ -20,7 +20,7 @@ class SplashOutActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(
-                Intent(this, MainActivity::class.java)
+                Intent(this, DrawerActivity::class.java)
             )
             finish()
         }, 500)
