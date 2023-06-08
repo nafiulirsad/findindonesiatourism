@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Find Indonesia Tourism</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="titlesplash">Find Indonesia Tourism</string>
+    <string name="mainMessageTextView">" Jelajahi dan dapatkan informasi tujuan wisata Anda dengan mudah."</string>
+    <string name="loginMessageTextView">Silakan isi formulir login akun untuk menggunakan aplikasi ini.</string>
+    <string name="registerMessageTextView">Silahkan isi formulir pendaftaran akun untuk menjadi pengguna aplikasi ini.</string>
+    <string name="username">Nama lengkap</string>
+    <string name="email">Email lengkap</string>
+    <string name="password">Kata sandi</string>
+    <string name="phone">Nomor telepon</string>
+    <string name="usernamehint">Isi nama lengkap Anda</string>
+    <string name="emailhint">Isi alamat email Anda</string>
+    <string name="passwordhint">Isi kata sandi Anda</string>
+    <string name="phonehint">Isi nomor telepon Anda</string>
+    <string name="messagedonthaveaccountmain">Belum punya akun?</string>
+    <string name="messagedonthaveaccount">Belum punya akun? <b>Daftar</b></string>
+    <string name="messagehaveaccountmain">Sudah memiliki akun?</string>
+    <string name="messagehaveaccount">Sudah memiliki akun? <b>Masuk</b></string>
+    <string name="register">Daftar</string>
+    <string name="or">Atau</string>
+    <string name="login">Masuk</string>
+    <string name="fill_in">Isi dahulu</string>
+    <string name="populerDestination">Populer Destination</string>
+    <string name="signup">Sign Up</string>
+    <string name="signin">Sign In</string>
+    <string name="home">Home</string>
+    <string name="homeview">Tampilan Home</string>
+    <string name="explore">Explore</string>
+    <string name="exploreview">Tampilan Explore</string>
+    <string name="category">Categories</string>
+    <string name="categoryview">Tampilan Categories</string>
+    <string name="favorite">Favorite</string>
+    <string name="favoriteview">Tampilan Favorite</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="profileview">Tampilan Profile</string>
+    <string name="language">Bahasa</string>
+    <string name="logout">Keluar</string>
+    <string name="navigation_drawer_open">Membuka navigasi drawer</string>
+    <string name="navigation_drawer_close">Menutup navigasi drawer</string>
+</resources>

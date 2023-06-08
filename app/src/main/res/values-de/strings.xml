@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Find Indonesia Tourism</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="titlesplash">Find Indonesia Tourism</string>
+    <string name="mainMessageTextView">Erkunden und informieren Sie sich ganz einfach über Ihr Reiseziel.</string>
+    <string name="loginMessageTextView">Bitte füllen Sie das Konto-Anmeldeformular aus, um diese Anwendung zu verwenden.</string>
+    <string name="registerMessageTextView">Bitte füllen Sie das Kontoregistrierungsformular aus, um Benutzer dieser Anwendung zu werden.</string>
+    <string name="username">Vollständiger Name</string>
+    <string name="email">E-Mail-Addresse</string>
+    <string name="password">Passwort</string>
+    <string name="phone">Telefonnummer</string>
+    <string name="usernamehint">Geben Sie Ihren vollständigen Namen ein</string>
+    <string name="emailhint">Geben Sie Ihre E-Mail-Adresse ein</string>
+    <string name="passwordhint">Geben Sie Ihr Passwort ein</string>
+    <string name="phonehint">Geben Sie Ihre Telefonnummer ein</string>
+    <string name="messagedonthaveaccountmain">Sie haben noch kein Konto?</string>
+    <string name="messagedonthaveaccount">Sie haben noch kein Konto? <b>Anmelden</b></string>
+    <string name="messagehaveaccountmain">Sie haben bereits ein Konto?</string>
+    <string name="messagehaveaccount">Sie haben bereits ein Konto? <b>Anmelden</b></string>
+    <string name="register">Registrieren</string>
+    <string name="or">Oder</string>
+    <string name="login">Anmeldung</string>
+    <string name="fill_in">Ergänze</string>
+    <string name="populerDestination">Beliebteres Reiseziel</string>
+    <string name="signup">Anmeldung</string>
+    <string name="signin">Anmelden</string>
+    <string name="home">Heim</string>
+    <string name="homeview">Home-Ansicht</string>
+    <string name="explore">Erkunden</string>
+    <string name="exploreview">Ansicht erkunden</string>
+    <string name="category">Kategorien</string>
+    <string name="categoryview">Kategorienansicht</string>
+    <string name="favorite">Favorit</string>
+    <string name="favoriteview">Lieblingsansicht</string>
+    <string name="settings">Einstellungen</string>
+    <string name="profile">Profil</string>
+    <string name="profileview">Ansicht Profil</string>
+    <string name="language">Sprache</string>
+    <string name="logout">Ausloggen</string>
+    <string name="navigation_drawer_open">Öffnen Sie die Navigationsleiste</string>
+    <string name="navigation_drawer_close">Navigationsleiste schließen</string>
+</resources>
