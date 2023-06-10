@@ -134,14 +134,14 @@ class RegisterActivity : AppCompatActivity() {
                     if (responseBody.error == true) {
                         Toast.makeText(
                             this@RegisterActivity,
-                            "Success",
+                            "Failed Register",
                             Toast.LENGTH_SHORT
                         ).show()
                     } else {
-                        startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+                        startActivity(Intent(this@RegisterActivity, MainActivity::class.java))
                         Toast.makeText(
                             this@RegisterActivity,
-                            "Failed",
+                            "Success Register",
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -173,6 +173,9 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val MESSAGE_FAILED = "Failed Register"
+        const val MESSAGE_SUCCESS = "Success Register"
+
         val emailRegex: Regex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,3})+\$")
         val passwordRegex: Regex = Regex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}\$")
     }
