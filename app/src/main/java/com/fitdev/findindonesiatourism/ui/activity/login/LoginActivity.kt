@@ -90,16 +90,24 @@ class LoginActivity : AppCompatActivity() {
                         if (responseBody.error == true) {
                             Toast.makeText(
                                 this@LoginActivity,
-                                responseBody.message,
+                                "Failed",
                                 Toast.LENGTH_LONG
                             ).show()
                         } else {
-                            save(responseBody.login as Login)
-                            Toast.makeText(
-                                this@LoginActivity,
-                                "login "+responseBody.message,
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            responseBody.login?.let { login ->
+                                save(login)
+                                Toast.makeText(
+                                    this@LoginActivity,
+                                    "login " + responseBody.message,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+//                            save(responseBody.login as Login)
+//                            Toast.makeText(
+//                                this@LoginActivity,
+//                                "Success",
+//                                Toast.LENGTH_SHORT
+//                            ).show()
                         }
                     } else {
                         Toast.makeText(
@@ -172,7 +180,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun save(login: Login) {
-        viewModel.saveToken(login.token as String)
+        viewModel.saveToken(login.id as String)
         val intent = Intent(this@LoginActivity, DrawerActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)

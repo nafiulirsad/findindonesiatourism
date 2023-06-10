@@ -40,4 +40,8 @@
     <string name="logout">Ausloggen</string>
     <string name="navigation_drawer_open">Öffnen Sie die Navigationsleiste</string>
     <string name="navigation_drawer_close">Navigationsleiste schließen</string>
+    <string name="confirm">Sie sind sicher, dass Sie beenden wollen?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="title_confirm">Abmeldebestätigung</string>
 </resources>

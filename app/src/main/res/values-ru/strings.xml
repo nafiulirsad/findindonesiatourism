@@ -40,4 +40,8 @@
     <string name="logout">Выйти</string>
     <string name="navigation_drawer_open">Открыть панель навигации</string>
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
+    <string name="confirm">Вы уверены, что хотите выйти?</string>
+    <string name="yes">да</string>
+    <string name="no">нет</string>
+    <string name="title_confirm">Подтверждение выхода</string>
 </resources>

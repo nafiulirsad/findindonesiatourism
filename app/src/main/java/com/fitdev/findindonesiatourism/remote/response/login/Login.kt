@@ -6,12 +6,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Login(
-    @field:SerializedName("email")
-    val usernameOrEmail: String? = null,
-
     @field:SerializedName("id")
-    val id: String? = null,
+    val id: String,
+
+    @field:SerializedName("username")
+    val username: String? = null,
 
     @field:SerializedName("token")
-    val token: String? = null
+    val token: String? = null,
 ) : Parcelable
