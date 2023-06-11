@@ -23,17 +23,13 @@
             android:exported="false" />
         <activity
             android:name="com.fitdev.findindonesiatourism.ui.activity.splash.SplashOutActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="false" />
         <activity
-            android:name="com.fitdev.findindonesiatourism.ui.activity.splash.SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:name="com.fitdev.findindonesiatourism.ui.activity.splash.Splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -44,12 +40,7 @@
             android:exported="false" />
         <activity
             android:name="com.fitdev.findindonesiatourism.ui.activity.main.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
     </application>
 
