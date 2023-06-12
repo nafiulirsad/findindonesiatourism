@@ -2,32 +2,25 @@ package com.fitdev.findindonesiatourism.ui.activity.register
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.WindowInsets
-import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.fitdev.findindonesiatourism.dataclass.registerData
 import com.fitdev.findindonesiatourism.remote.api.ApiConfig
 import com.fitdev.findindonesiatourism.remote.response.register.RegisterResponse
 import com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity
 import com.fitdev.findindonesiatourism.ui.activity.main.MainActivity
-import com.fitdev.findindonesiatourism.ui.costume.ButtonRegister
-import com.fitdev.findindonesiatourism.ui.costume.EditTextEmail
-import com.fitdev.findindonesiatourism.ui.costume.EditTextPassword
-import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ActivityRegisterBinding
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
-    private lateinit var email: EditTextEmail
-    private lateinit var password: EditTextPassword
-    private lateinit var registerButton: ButtonRegister
 
     private var isName: Boolean = true
     private var isEmail: Boolean = false
@@ -35,54 +28,37 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
-
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.EditTextUsername
-        email = binding.EditTextEmail
-        password = binding.EditTextPassword
-        registerButton = binding.registerButton
-        binding.EditTextNumberPhone
-
-        setupView()
-        onClicked()
-    }
-
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
         supportActionBar?.hide()
+
+        buttonAction()
     }
 
-    private fun onClicked() {
-        registerButtonEnable()
+    private fun buttonAction() {
         textEmail()
         textPassword()
 
-        registerButton.setOnClickListener {
-            onClickCallback()
+        binding.btnRegister.setOnClickListener {
+            val fullName = binding.registerInputFullname.text.toString()
+            val emailAddress = binding.registerInputEmail.text.toString()
+            val password = binding.registerInputPassword.text.toString()
+            val phoneNumber = binding.registerInputPhone.text.toString().toInt()
+            val inputData = registerData(fullName, emailAddress, password, phoneNumber)
+            registerAction(inputData)
         }
 
-        binding.textView4.setOnClickListener {
+        binding.registerHyperlinkLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 
     private fun registerButtonEnable() {
-        registerButton.isEnabled = isName && isEmail && isPassword
+        binding.btnRegister.isEnabled = isName && isEmail && isPassword
     }
 
     private fun textEmail() {
-        email.addTextChangedListener(object : TextWatcher {
+        binding.registerInputEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 s?.isEmpty()
             }
@@ -100,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun textPassword() {
-        password.addTextChangedListener(object : TextWatcher {
+        binding.registerInputPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 s?.isEmpty()
             }
@@ -117,13 +93,8 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
-    private fun onClickCallback() {
-        val client = ApiConfig.getApiService().register(
-            binding.EditTextUsername.text.toString(),
-            email.text.toString(),
-            password.text.toString(),
-            binding.EditTextNumberPhone.text.toString()
-        )
+    private fun registerAction(inputData: registerData) {
+        val client = ApiConfig.getApiService().register(inputData.fullName, inputData.email, inputData.password, inputData.phone.toString())
         client.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(
                 call: Call<RegisterResponse>,
@@ -161,21 +132,18 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
         return true
     }
 
-    override fun onBackPressed() {
-        val intent = Intent(applicationContext, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
-        finish()
-    }
+//    override fun onBackPressed() {
+//        val intent = Intent(applicationContext, MainActivity::class.java)
+//        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+//        startActivity(intent)
+//        finish()
+//    }
 
     companion object {
-        const val MESSAGE_FAILED = "Failed Register"
-        const val MESSAGE_SUCCESS = "Success Register"
-
         val emailRegex: Regex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,3})+\$")
         val passwordRegex: Regex = Regex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}\$")
     }

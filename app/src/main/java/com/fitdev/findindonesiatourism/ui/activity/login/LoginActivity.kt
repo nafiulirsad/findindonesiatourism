@@ -3,15 +3,12 @@ package com.fitdev.findindonesiatourism.ui.activity.login
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.WindowInsets
-import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -22,12 +19,8 @@ import com.fitdev.findindonesiatourism.remote.response.login.Login
 import com.fitdev.findindonesiatourism.remote.response.login.LoginResponse
 import com.fitdev.findindonesiatourism.ui.activity.drawer.DrawerActivity
 import com.fitdev.findindonesiatourism.ui.activity.login.model.LoginViewModel
-import com.fitdev.findindonesiatourism.ui.costume.ButtonLogin
-import com.fitdev.findindonesiatourism.ui.costume.EditTextEmail
-import com.fitdev.findindonesiatourism.ui.costume.EditTextPassword
-import com.fitdev.myapplication.R
-import com.fitdev.myapplication.databinding.ActivityLoginBinding
 import com.fitdev.findindonesiatourism.ui.activity.register.RegisterActivity
+import com.fitdev.myapplication.databinding.ActivityLoginBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,10 +30,6 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "se
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
-    private lateinit var email: EditTextEmail
-    private lateinit var password: EditTextPassword
-    private lateinit var loginButton: ButtonLogin
-
     private var isEmail: Boolean = false
     private var isPassword: Boolean = false
 
@@ -48,40 +37,33 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        email = binding.EditTextEmail
-        password = binding.EditTextPassword
-        loginButton = binding.loginButton
-
-        setupView()
+        supportActionBar?.hide()
 
         if (!intent.getStringExtra(EMAIL).isNullOrEmpty()) {
-            email.setText(intent.getStringExtra(EMAIL))
+            binding.loginInputEmail.setText(intent.getStringExtra(EMAIL))
             isEmail = true
         }
         if (!intent.getStringExtra(PASSWORD).isNullOrEmpty()) {
-            password.setText(intent.getStringExtra(PASSWORD))
+            binding.loginInputPassword.setText(intent.getStringExtra(PASSWORD))
             isPassword = true
         }
 
-        onclicked()
+        buttonAction()
     }
 
-    private fun onclicked() {
+    private fun buttonAction() {
         intentMoveRegister()
         viewModel()
         loginButtonEnable()
         textEmail()
         textPassword()
 
-        loginButton.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             val client = ApiConfig.getApiService().login(
-                email.text.toString(),
-                password.text.toString()
+                binding.loginInputEmail.text.toString(),
+                binding.loginInputPassword.text.toString()
             )
             client.enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
@@ -141,12 +123,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginButtonEnable() {
-        loginButton.isEnabled = isEmail && isPassword
-        loginButton.isEnabled = isEmail && isPassword
+        binding.btnLogin.isEnabled = isEmail && isPassword
+        binding.btnLogin.isEnabled = isEmail && isPassword
     }
 
     private fun textEmail() {
-        email.addTextChangedListener(object : TextWatcher {
+        binding.loginInputEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 s?.isEmpty()
             }
@@ -163,7 +145,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun textPassword() {
-        password.addTextChangedListener(object : TextWatcher {
+        binding.loginInputPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 s?.isEmpty()
             }
@@ -180,24 +162,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun save(login: Login) {
-        viewModel.saveToken(login.id as String)
+        viewModel.saveToken(login.id)
         val intent = Intent(this@LoginActivity, DrawerActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
-    }
-
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-        supportActionBar?.hide()
     }
 
     companion object {

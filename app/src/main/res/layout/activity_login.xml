@@ -7,162 +7,157 @@
     android:background="@color/Background"
     tools:context="com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity">
 
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/Primary"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingVertical="10dp"
+        android:text="@string/signin"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/login_input_email"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/emailhint"
+        android:inputType="text|textEmailAddress"
+        android:paddingStart="12dp"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Primary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_label_email"
+        android:importantForAutofill="no"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/login_input_password"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/passwordhint"
+        android:inputType="text|textPassword"
+        android:paddingStart="12dp"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Primary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_label_password"
+        android:importantForAutofill="no"
+        tools:ignore="RtlSymmetry" />
+
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/login_app_logo"
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logo_find_indonesia_tourism" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:id="@+id/login_app_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:text="@string/titlesplash"
         android:textColor="@color/Primary"
-        android:textSize="28sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/login_app_logo" />
 
     <TextView
-        android:id="@+id/messageTextView"
+        android:id="@+id/login_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="@string/loginMessageTextView"
         android:textColor="@color/Primary"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/login_app_name" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/login_label_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/email"
         android:textColor="@color/Primary"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/messageTextView" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailEditTextLayout"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email">
-
-        <com.fitdev.findindonesiatourism.ui.costume.EditTextEmail
-            android:id="@+id/EditTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="12dp"
-            android:ems="10"
-            android:hint="@string/emailhint"
-            android:textColorHint="@color/Primary"
-            android:inputType="textEmailAddress"
-            android:textSize="16sp"
-            android:background="@android:color/transparent"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/login_message" />
 
     <TextView
-        android:id="@+id/password"
+        android:id="@+id/login_label_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/password"
         android:textColor="@color/Primary"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordEditTextLayout"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        app:passwordToggleEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password">
-
-        <com.fitdev.findindonesiatourism.ui.costume.EditTextPassword
-            android:id="@+id/EditTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            app:passwordToggleEnabled="true"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:hint="@string/passwordhint"
-            android:textColorHint="@color/Primary"
-            android:textSize="16sp"
-            android:background="@android:color/transparent"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/login_input_email" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/messagedonthaveaccount"
         android:textColor="@color/Primary"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/loginButton" />
-
-    <com.fitdev.findindonesiatourism.ui.costume.ButtonLogin
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="35dp"
-        android:enabled="false"
-        android:textStyle="bold|italic"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
