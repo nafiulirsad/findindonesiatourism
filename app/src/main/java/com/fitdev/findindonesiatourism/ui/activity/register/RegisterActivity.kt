@@ -54,6 +54,15 @@ class RegisterActivity : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {}
         })
 
+        binding.registerInputUsername.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(seq: CharSequence?, start: Int, before: Int, count: Int) {
+                if(count > 0) binding.registerInputUsername.setBackgroundResource(R.drawable.custom_input_true)
+                else binding.registerInputUsername.setBackgroundResource(R.drawable.custom_input_false)
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
         binding.registerInputEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(seq: CharSequence?, start: Int, before: Int, count: Int) {
@@ -87,12 +96,15 @@ class RegisterActivity : AppCompatActivity() {
             hideKeyboard()
 
             val fullName = binding.registerInputFullname.text.toString()
+            val userName = binding.registerInputUsername.text.toString()
             val emailAddress = binding.registerInputEmail.text.toString()
             val password = binding.registerInputPassword.text.toString()
             val phoneNumber = binding.registerInputPhone.text.toString()
-            val registerData = registerData(fullName, emailAddress, password, phoneNumber)
+            val profileImage = "default.png"
+
+            val registerData = registerData(fullName, userName, emailAddress, password, phoneNumber, profileImage)
             validate(registerData)
-            if(fullName.isNotEmpty() && emailAddress.isNotEmpty() && password.isNotEmpty() && phoneNumber.isNotEmpty()) doRegister(registerData)
+            if(fullName.isNotEmpty() && userName.isNotEmpty() && emailAddress.isNotEmpty() && password.isNotEmpty() && phoneNumber.isNotEmpty()) doRegister(registerData)
         }
     }
 
@@ -102,6 +114,12 @@ class RegisterActivity : AppCompatActivity() {
             binding.registerInputFullname.error = "Full name is required"
         }
         else binding.registerInputFullname.setBackgroundResource(R.drawable.custom_input_true)
+
+        if(data.userName.isEmpty()) {
+            binding.registerInputUsername.setBackgroundResource(R.drawable.custom_input_false)
+            binding.registerInputUsername.error = "Username is required"
+        }
+        else binding.registerInputUsername.setBackgroundResource(R.drawable.custom_input_true)
 
         if(data.email.isEmpty()) {
             binding.registerInputEmail.setBackgroundResource(R.drawable.custom_input_false)
@@ -124,7 +142,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun doRegister(data: registerData) {
         showLoading(true)
-        val client = ApiConfig.getApiService().register(data.fullName, data.email, data.password, data.phone)
+        val client = ApiConfig.getApiService().register(data.fullName, data.userName, data.email, data.password, data.phone, data.profileImage)
         client.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(
                 call: Call<RegisterResponse>,

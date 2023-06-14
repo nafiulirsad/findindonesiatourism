@@ -1,6 +1,8 @@
 package com.fitdev.findindonesiatourism.ui.activity.main
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.text.Html
@@ -8,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.fitdev.findindonesiatourism.ui.activity.drawer.DrawerActivity
 import com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity
 import com.fitdev.findindonesiatourism.ui.activity.register.RegisterActivity
 import com.fitdev.findindonesiatourism.ui.dataimg.ImageAdapter
@@ -17,6 +20,7 @@ import com.fitdev.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var adapter: ImageAdapter
     private lateinit var dots: ArrayList<TextView>
 
@@ -28,24 +32,37 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        imageData()
+        sessionCheck()
+        setSlider()
         onClick()
     }
 
-    private fun imageData() {
+    private fun sessionCheck(){
+        sharedPreferences = getSharedPreferences("MY_SESS", Context.MODE_PRIVATE)
+
+        val getFullName = sharedPreferences.getString("FULL_NAME", "")
+        val getEmail = sharedPreferences.getString("EMAIL", "")
+        if(getFullName !== "" && getEmail !== ""){
+            val i = Intent(this, DrawerActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+    }
+
+    private fun setSlider() {
         list.add(
             ImageData(
-                imgUrl = "https://berita.99.co/wp-content/uploads/2022/03/gunung-tertinggi-di-indonesia.jpg"
+                imgUrl = "https://aplikasijpm.online/fitproject/image1-min.jpg"
             )
         )
         list.add(
             ImageData(
-                imgUrl = "https://dagodreampark.co.id/media/k2/items/cache/be4e4fd1bcb87d92f342f6e3e3e1d9e2_XL.jpg"
+                imgUrl = "https://aplikasijpm.online/fitproject/image2-min.jpg"
             )
         )
         list.add(
             ImageData(
-                imgUrl = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/97/b7/6f/tumpak-sewu-waterfalls.jpg?w=1200&h=-1&s=1"
+                imgUrl = "https://aplikasijpm.online/fitproject/image3-min.jpg"
             )
         )
 

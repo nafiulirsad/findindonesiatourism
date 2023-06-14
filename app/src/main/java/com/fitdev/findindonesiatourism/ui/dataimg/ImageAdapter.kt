@@ -3,7 +3,9 @@ package com.fitdev.findindonesiatourism.ui.dataimg
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import coil.load
+import coil.transform.RoundedCornersTransformation
+import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ListSlideBinding
 
 class ImageAdapter(private val items: List<ImageData>) :
@@ -14,7 +16,10 @@ class ImageAdapter(private val items: List<ImageData>) :
 
         fun bind(data: ImageData) {
             with(binding) {
-                Glide.with(itemView).load(data.imgUrl).into(imgGambar)
+                imgGambar.load(data.imgUrl){
+                    placeholder(R.drawable.ic_loading)
+                    transformations(RoundedCornersTransformation(24F))
+                }
             }
         }
     }
