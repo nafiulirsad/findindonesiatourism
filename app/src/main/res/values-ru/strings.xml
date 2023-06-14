@@ -10,7 +10,7 @@
     <string name="email">Адрес электронной почты</string>
     <string name="password">Пароль</string>
     <string name="phone">Номер телефона</string>
-    <string name="usernamehint">Введите свое полное имя</string>
+    <string name="usernamehint">Введите ваше имя пользователя</string>
     <string name="emailhint">Заполните свой адрес электронной почты</string>
     <string name="passwordhint">Введите свой пароль</string>
     <string name="phonehint">Заполните свой номер телефона</string>
@@ -44,4 +44,12 @@
     <string name="yes">да</string>
     <string name="no">нет</string>
     <string name="title_confirm">Подтверждение выхода</string>
+    <string name="logo_find_indonesia_tourism">Найти логотип туризма Индонезии</string>
+    <string name="slider">Слайдеры</string>
+    <string name="be_patient">Потерпи…</string>
+    <string name="full_name">Полное имя</string>
+    <string name="fill_in_your_full_name">Введите свое полное имя</string>
+    <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
+    <string name="username_or_email_address">Имя пользователя или адрес электронной почты</string>
+    <string name="fill_in_your_username_or_email_address">Заполните свое имя пользователя или адрес электронной почты</string>
 </resources>

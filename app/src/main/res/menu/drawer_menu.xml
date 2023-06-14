@@ -22,7 +22,7 @@
             android:title="@string/favorite" />
     </group>
 
-    <item android:title="@string/settings">
+    <item android:title="@string/settings" android:iconTint="@color/Primary">
         <menu>
             <item
                 android:id="@+id/nav_profile"

@@ -11,7 +11,7 @@
     <string name="email">Email lengkap</string>
     <string name="password">Kata sandi</string>
     <string name="phone">Nomor telepon</string>
-    <string name="usernamehint">Isi nama lengkap Anda</string>
+    <string name="usernamehint">Isi nama pengguna Anda</string>
     <string name="emailhint">Isi alamat email Anda</string>
     <string name="passwordhint">Isi kata sandi Anda</string>
     <string name="phonehint">Isi nomor telepon Anda</string>
@@ -45,4 +45,12 @@
     <string name="yes">Iya</string>
     <string name="no">Tidak</string>
     <string name="title_confirm">Konfirmasi Keluar</string>
+    <string name="logo_find_indonesia_tourism">Logo Find Indonesia Tourism</string>
+    <string name="slider">Slider</string>
+    <string name="be_patient">Bersabarlah…</string>
+    <string name="full_name">Nama lengkap</string>
+    <string name="fill_in_your_full_name">Isi nama lengkap Anda</string>
+    <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
+    <string name="username_or_email_address">Nama pengguna atau alamat email</string>
+    <string name="fill_in_your_username_or_email_address">Isi nama pengguna atau alamat email Anda</string>
 </resources>

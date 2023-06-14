@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
@@ -28,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/login_input_email"
+        android:id="@+id/login_input_username_email"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"
@@ -38,7 +39,8 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:fontFamily="@font/poppins_regular"
-        android:hint="@string/emailhint"
+        android:hint="@string/fill_in_your_username_or_email_address"
+        android:importantForAutofill="no"
         android:inputType="text|textEmailAddress"
         android:paddingStart="12dp"
         android:textColor="@color/Primary"
@@ -46,8 +48,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_label_email"
-        android:importantForAutofill="no"
+        app:layout_constraintTop_toBottomOf="@+id/login_label_username_email"
         tools:ignore="RtlSymmetry" />
 
     <EditText
@@ -62,6 +63,7 @@
         android:ems="10"
         android:fontFamily="@font/poppins_regular"
         android:hint="@string/passwordhint"
+        android:importantForAutofill="no"
         android:inputType="text|textPassword"
         android:paddingStart="12dp"
         android:textColor="@color/Primary"
@@ -70,7 +72,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_label_password"
-        android:importantForAutofill="no"
         tools:ignore="RtlSymmetry" />
 
     <ImageView
@@ -78,11 +79,11 @@
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:layout_marginTop="30dp"
+        android:contentDescription="@string/logo_find_indonesia_tourism"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/logo_find_indonesia_tourism" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/login_app_name"
@@ -115,14 +116,14 @@
         app:layout_constraintTop_toBottomOf="@+id/login_app_name" />
 
     <TextView
-        android:id="@+id/login_label_email"
+        android:id="@+id/login_label_username_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="@string/email"
+        android:text="@string/username_or_email_address"
         android:textColor="@color/Primary"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -144,10 +145,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_input_email" />
+        app:layout_constraintTop_toBottomOf="@+id/login_input_username_email" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/login_hyperlink_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

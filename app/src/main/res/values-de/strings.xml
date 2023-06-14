@@ -7,10 +7,10 @@
     <string name="loginMessageTextView">Bitte füllen Sie das Konto-Anmeldeformular aus, um diese Anwendung zu verwenden.</string>
     <string name="registerMessageTextView">Bitte füllen Sie das Kontoregistrierungsformular aus, um Benutzer dieser Anwendung zu werden.</string>
     <string name="username">Vollständiger Name</string>
-    <string name="email">E-Mail-Addresse</string>
+    <string name="email">E-Mail-Adresse</string>
     <string name="password">Passwort</string>
     <string name="phone">Telefonnummer</string>
-    <string name="usernamehint">Geben Sie Ihren vollständigen Namen ein</string>
+    <string name="usernamehint">Geben Sie Ihren Benutzernamen ein</string>
     <string name="emailhint">Geben Sie Ihre E-Mail-Adresse ein</string>
     <string name="passwordhint">Geben Sie Ihr Passwort ein</string>
     <string name="phonehint">Geben Sie Ihre Telefonnummer ein</string>
@@ -44,4 +44,12 @@
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
     <string name="title_confirm">Abmeldebestätigung</string>
+    <string name="logo_find_indonesia_tourism">Finden Sie das Logo von Indonesia Tourism</string>
+    <string name="slider">Schieberegler</string>
+    <string name="be_patient">Sei geduldig…</string>
+    <string name="full_name">Vollständiger Name</string>
+    <string name="fill_in_your_full_name">Geben Sie Ihren vollständigen Namen ein</string>
+    <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
+    <string name="username_or_email_address">Benutzername oder E-mail Adresse</string>
+    <string name="fill_in_your_username_or_email_address">Geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse ein</string>
 </resources>

@@ -12,4 +12,6 @@
     <color name="Primary">#1D74B9</color>
     <color name="Secondary">#A1BC0C</color>
     <color name="BackgroundMenu">#125A98</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#32CD32</color>
 </resources>

@@ -11,8 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:textSize="16sp"
-        android:text="@string/confirm"/>
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/confirm"
+        android:textColor="@color/Primary"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,27 +26,35 @@
 
         <Button
             android:id="@+id/btn_logout_no"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:background="@color/Primary"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/Primary"
+            android:fontFamily="@font/poppins_semibold"
             android:text="@string/no"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_logout_yes"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:background="@color/Secondary"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/poppins_semibold"
             android:text="@string/yes"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

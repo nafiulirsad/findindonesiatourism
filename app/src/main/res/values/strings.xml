@@ -5,11 +5,11 @@
     <string name="mainMessageTextView">Explore and get information on your travel destination easily.</string>
     <string name="loginMessageTextView">Please fill in the account login form to use this application.</string>
     <string name="registerMessageTextView">Please fill in the account registration form to become a user of this application.</string>
-    <string name="username">Full name</string>
+    <string name="username">Username</string>
     <string name="email">Email address</string>
     <string name="password">Password</string>
     <string name="phone">Phone number</string>
-    <string name="usernamehint">Fill in your full name</string>
+    <string name="usernamehint">Fill in your username</string>
     <string name="emailhint">Fill in your email address</string>
     <string name="passwordhint">Fill in your password</string>
     <string name="phonehint">Fill in your number phone</string>
@@ -45,4 +45,10 @@
     <string name="no">No</string>
     <string name="logo_find_indonesia_tourism">Logo Find Indonesia Tourism</string>
     <string name="slider">Slider</string>
+    <string name="be_patient">Be patient…</string>
+    <string name="full_name">Full name</string>
+    <string name="fill_in_your_full_name">Fill in your full name</string>
+    <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
+    <string name="username_or_email_address">Username or email address</string>
+    <string name="fill_in_your_username_or_email_address">Fill in your username or email address</string>
 </resources>

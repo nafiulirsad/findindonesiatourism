@@ -10,7 +10,7 @@
     <string name="email">Dirección de correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="phone">Número de teléfono</string>
-    <string name="usernamehint">Escribe tu nombre completo</string>
+    <string name="usernamehint">Complete su nombre de usuario</string>
     <string name="emailhint">Complete su dirección de correo electrónico</string>
     <string name="passwordhint">Complete su contraseña</string>
     <string name="phonehint">Ingrese su número de teléfono</string>
@@ -44,4 +44,12 @@
     <string name="yes">Sí</string>
     <string name="no">No</string>
     <string name="title_confirm">Confirmación de cierre de sesión</string>
+    <string name="logo_find_indonesia_tourism">Encuentra el logotipo de Turismo de Indonesia</string>
+    <string name="slider">Controles deslizantes</string>
+    <string name="be_patient">Ser paciente…</string>
+    <string name="full_name">Nombre completo</string>
+    <string name="fill_in_your_full_name">Escribe tu nombre completo</string>
+    <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
+    <string name="username_or_email_address">Nombre de usuario o dirección de correo electrónico</string>
+    <string name="fill_in_your_username_or_email_address">Complete su nombre de usuario o dirección de correo electrónico</string>
 </resources>
