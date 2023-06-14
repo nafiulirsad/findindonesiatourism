@@ -1,14 +1,15 @@
 package com.fitdev.findindonesiatourism.remote.response.register
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-data class RegisterResponse (
-    @field:SerializedName("error")
-    val error: Boolean? = null,
+data class RegisterResponse(
 
-    @field:SerializedName("message")
-    val message: String,
-) : Parcelable
+	@field:SerializedName("success")
+	val success: Boolean? = null,
+
+	@field:SerializedName("message")
+	val message: String? = null,
+
+	@field:SerializedName("userRegistered")
+	val userRegistered: List<UserRegisteredItem?>? = null
+)
