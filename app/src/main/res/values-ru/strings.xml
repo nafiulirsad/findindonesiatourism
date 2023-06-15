@@ -52,4 +52,12 @@
     <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
     <string name="username_or_email_address">Имя пользователя или адрес электронной почты</string>
     <string name="fill_in_your_username_or_email_address">Заполните свое имя пользователя или адрес электронной почты</string>
+    <string name="region_image">Изображение региона</string>
+    <string name="welcome_to_find_indonesia_tourism_app">Добро пожаловать в приложение «Найти туризм в Индонезии»!</string>
+    <string name="region">Область</string>
+    <string name="popular">Популярный</string>
+    <string name="recommendation">Рекомендация</string>
+    <string name="region_name">Название региона</string>
+    <string name="_17_destinations">17 направлений</string>
+    <string name="background_content">Фоновое содержимое</string>
 </resources>

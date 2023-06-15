@@ -52,4 +52,12 @@
     <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
     <string name="username_or_email_address">Benutzername oder E-mail Adresse</string>
     <string name="fill_in_your_username_or_email_address">Geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse ein</string>
+    <string name="region_image">Regionsbild</string>
+    <string name="welcome_to_find_indonesia_tourism_app">Willkommen bei Find Indonesia Tourism App!</string>
+    <string name="region">Region</string>
+    <string name="popular">Beliebt</string>
+    <string name="recommendation">Empfehlung</string>
+    <string name="region_name">Regionsname</string>
+    <string name="_17_destinations">17 Reiseziele</string>
+    <string name="background_content">Hintergrundinhalt</string>
 </resources>
