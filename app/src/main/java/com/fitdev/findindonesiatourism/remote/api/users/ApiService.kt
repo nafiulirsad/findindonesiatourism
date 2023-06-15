@@ -1,4 +1,4 @@
-package com.fitdev.findindonesiatourism.remote.api
+package com.fitdev.findindonesiatourism.remote.api.users
 
 import com.fitdev.findindonesiatourism.remote.response.login.LoginResponse
 import com.fitdev.findindonesiatourism.remote.response.register.RegisterResponse

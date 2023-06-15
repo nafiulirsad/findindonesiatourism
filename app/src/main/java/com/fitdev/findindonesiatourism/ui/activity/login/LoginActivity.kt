@@ -17,7 +17,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fitdev.findindonesiatourism.dataclass.loginData
-import com.fitdev.findindonesiatourism.remote.api.ApiConfig
+import com.fitdev.findindonesiatourism.remote.api.users.ApiConfig
 import com.fitdev.findindonesiatourism.remote.response.login.LoginResponse
 import com.fitdev.findindonesiatourism.remote.response.login.UserLoggedInItem
 import com.fitdev.findindonesiatourism.ui.activity.drawer.DrawerActivity

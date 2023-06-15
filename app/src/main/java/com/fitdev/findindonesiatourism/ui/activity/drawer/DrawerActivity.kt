@@ -69,9 +69,9 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> {
+                supportActionBar?.title = "Home"
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, HomeFragment()).commit()
-                Toast.makeText(this, R.string.homeview, Toast.LENGTH_SHORT).show()
             }
             R.id.nav_explore -> {
                 supportFragmentManager.beginTransaction()

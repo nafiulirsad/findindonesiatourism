@@ -15,7 +15,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fitdev.findindonesiatourism.dataclass.registerData
-import com.fitdev.findindonesiatourism.remote.api.ApiConfig
+import com.fitdev.findindonesiatourism.remote.api.users.ApiConfig
 import com.fitdev.findindonesiatourism.remote.response.register.RegisterResponse
 import com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity
 import com.fitdev.findindonesiatourism.ui.activity.main.MainActivity
@@ -178,7 +178,6 @@ class RegisterActivity : AppCompatActivity() {
                 Log.e(TAG, "onFailure: ${t.message}")
                 Toast.makeText(this@RegisterActivity, t.message, Toast.LENGTH_LONG).show()
             }
-
         })
     }
 
