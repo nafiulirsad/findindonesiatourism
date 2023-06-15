@@ -60,4 +60,8 @@
     <string name="region_name">Название региона</string>
     <string name="_17_destinations">17 направлений</string>
     <string name="background_content">Фоновое содержимое</string>
+    <string name="message_title_category">Категории индонезийского туризма</string>
+    <string name="category_name">Category Name</string>
+    <string name="message_title_explore">Исследуйте пункт назначения вашего путешествия</string>
+    <string name="message_title_favorite">Мои любимые туристические направления</string>
 </resources>

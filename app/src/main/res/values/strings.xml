@@ -59,4 +59,8 @@
     <string name="region_name">Region Name</string>
     <string name="_17_destinations">17 Destinations</string>
     <string name="background_content">Background Content</string>
+    <string name="message_title_category">Indonesian Tourism Categories</string>
+    <string name="category_name">Category Name</string>
+    <string name="message_title_explore">Explore Your Travel Destination</string>
+    <string name="message_title_favorite">My Favorite Travel Destinations</string>
 </resources>
