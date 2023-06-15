@@ -7,7 +7,7 @@
     <string name="mainMessageTextView">" Jelajahi dan dapatkan informasi tujuan wisata Anda dengan mudah."</string>
     <string name="loginMessageTextView">Silakan isi formulir login akun untuk menggunakan aplikasi ini.</string>
     <string name="registerMessageTextView">Silahkan isi formulir pendaftaran akun untuk menjadi pengguna aplikasi ini.</string>
-    <string name="username">Nama lengkap</string>
+    <string name="username">Username</string>
     <string name="email">Email lengkap</string>
     <string name="password">Kata sandi</string>
     <string name="phone">Nomor telepon</string>
@@ -61,4 +61,8 @@
     <string name="region_name">Nama Wilayah</string>
     <string name="_17_destinations">17 Destinasi</string>
     <string name="background_content">Konten Latar Belakang</string>
+    <string name="message_title_category">Kategori Pariwisata Indonesia</string>
+    <string name="category_name">Category Name</string>
+    <string name="message_title_explore">Jelajahi Tujuan Wisata Anda</string>
+    <string name="message_title_favorite">Destinasi Wisata Favorit Saya</string>
 </resources>

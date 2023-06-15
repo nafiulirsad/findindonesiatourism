@@ -60,4 +60,8 @@
     <string name="region_name">Regionsname</string>
     <string name="_17_destinations">17 Reiseziele</string>
     <string name="background_content">Hintergrundinhalt</string>
+    <string name="message_title_category">Indonesische Tourismuskategorien</string>
+    <string name="category_name">Category Name</string>
+    <string name="message_title_explore">Entdecken Sie Ihr Reiseziel</string>
+    <string name="message_title_favorite">Meine Lieblingsreiseziele</string>
 </resources>

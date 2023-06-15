@@ -60,4 +60,8 @@
     <string name="region_name">Nombre de la región</string>
     <string name="_17_destinations">17 destinos</string>
     <string name="background_content">Contenido de fondo</string>
+    <string name="message_title_category">Categorías de turismo de Indonesia</string>
+    <string name="category_name">Category Name</string>
+    <string name="message_title_explore">Explore su destino de viaje</string>
+    <string name="message_title_favorite">Mis destinos de viaje favoritos</string>
 </resources>
