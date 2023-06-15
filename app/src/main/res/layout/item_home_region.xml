@@ -15,7 +15,6 @@
         android:elevation="50dp"
         tools:ignore="RtlSymmetry">
 
-
         <ImageView
             android:id="@+id/regionImage"
             android:layout_width="0dp"

@@ -70,4 +70,7 @@
     <string name="message_title_explore">Jelajahi Tujuan Wisata Anda</string>
     <string name="message_title_favorite">Destinasi Wisata Favorit Saya</string>
     <string name="number_phone">081xxxxxxxxx</string>
+    <string name="rating">Rating</string>
+    <string name="message_profile">Harap ubah pengaturan profil dari menjadi data profil pengguna.</string>
+    <string name="save_changes">Simpan Perubahan</string>
 </resources>
