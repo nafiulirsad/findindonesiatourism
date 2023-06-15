@@ -62,6 +62,11 @@
     <string name="background_content">Contenido de fondo</string>
     <string name="message_title_category">Categorías de turismo de Indonesia</string>
     <string name="category_name">Category Name</string>
+    <string name="beaches">Playas</string>
+    <string name="lakes">lagos</string>
+    <string name="waterfall">Cascada</string>
+    <string name="mountains">Montañas</string>
     <string name="message_title_explore">Explore su destino de viaje</string>
     <string name="message_title_favorite">Mis destinos de viaje favoritos</string>
+    <string name="number_phone">081xxxxxxxxx</string>
 </resources>

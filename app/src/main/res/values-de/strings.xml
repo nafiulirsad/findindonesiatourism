@@ -62,6 +62,11 @@
     <string name="background_content">Hintergrundinhalt</string>
     <string name="message_title_category">Indonesische Tourismuskategorien</string>
     <string name="category_name">Category Name</string>
+    <string name="beaches">Strände</string>
+    <string name="lakes">Seen</string>
+    <string name="waterfall">Wasserfall</string>
+    <string name="mountains">Berg</string>
     <string name="message_title_explore">Entdecken Sie Ihr Reiseziel</string>
     <string name="message_title_favorite">Meine Lieblingsreiseziele</string>
+    <string name="number_phone">081xxxxxxxxx</string>
 </resources>
