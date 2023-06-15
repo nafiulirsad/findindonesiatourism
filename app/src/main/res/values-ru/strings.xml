@@ -69,4 +69,7 @@
     <string name="message_title_explore">Исследуйте пункт назначения вашего путешествия</string>
     <string name="message_title_favorite">Мои любимые туристические направления</string>
     <string name="number_phone">081xxxxxxxxx</string>
+    <string name="rating">Rating</string>
+    <string name="message_profile">Пожалуйста, измените в настройках профиля с на данные профиля пользователя.</string>
+    <string name="save_changes">Сохранить изменения</string>
 </resources>

@@ -120,6 +120,7 @@ class LoginActivity : AppCompatActivity() {
                         userData[0].let{
                             editor.putString("ID", it.id)
                             editor.putString("FULL_NAME", it.fullname)
+                            editor.putString("USERNAME", it.username)
                             editor.putString("EMAIL", it.email)
                             editor.putString("PHONE_NUMBER", it.phoneNumber)
                             editor.putString("PROFILE_IMAGE", it.profileImage)

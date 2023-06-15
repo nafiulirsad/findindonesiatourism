@@ -69,4 +69,7 @@
     <string name="message_title_explore">Entdecken Sie Ihr Reiseziel</string>
     <string name="message_title_favorite">Meine Lieblingsreiseziele</string>
     <string name="number_phone">081xxxxxxxxx</string>
+    <string name="rating">Rating</string>
+    <string name="message_profile">Bitte ändern Sie die Profileinstellungen von auf Benutzerprofildaten.</string>
+    <string name="save_changes">Änderungen speichern</string>
 </resources>
