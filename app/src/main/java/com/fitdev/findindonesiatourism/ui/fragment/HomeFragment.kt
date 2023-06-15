@@ -17,9 +17,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fitdev.findindonesiatourism.dataclass.PulauResponseItem
 import com.fitdev.findindonesiatourism.dataclass.RegionData
+import com.fitdev.findindonesiatourism.dataclass.popular.PopularAttractionsItem
+import com.fitdev.findindonesiatourism.dataclass.popular.PopularResponse
 import com.fitdev.findindonesiatourism.dataclass.wisata.ResultsItem
 import com.fitdev.findindonesiatourism.dataclass.wisata.WisataResponse
 import com.fitdev.findindonesiatourism.remote.api.wisata.ApiConfig
+import com.fitdev.findindonesiatourism.ui.adapter.PopularViewAdapter
 import com.fitdev.findindonesiatourism.ui.adapter.RegionViewAdapter
 import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.FragmentHomeBinding
@@ -34,6 +37,9 @@ class HomeFragment : Fragment() {
     private val _byRegionData = MutableLiveData<MutableList<RegionData>>()
     private val byRegionData: LiveData<MutableList<RegionData>> = _byRegionData
     private val byRegionList: MutableList<RegionData> = mutableListOf()
+
+    private val _byPopularData = MutableLiveData<List<PopularAttractionsItem>>()
+    private val byPopularData: LiveData<List<PopularAttractionsItem>> = _byPopularData
 
     private lateinit var myDialog: Dialog
 
@@ -50,9 +56,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.homeRvRegion.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.homeRvPopular.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         getWisataByRegion()
+        getWisataByPopular()
         observeByRegionData()
+        observeByPopularData()
     }
 
     private fun getWisataByRegion(){
@@ -120,10 +129,52 @@ class HomeFragment : Fragment() {
         })
     }
 
+    private fun getWisataByPopular(){
+        showLoading(true)
+        val getAllWisataPopular = ApiConfig.getApiService().getAllWisataPopular()
+        getAllWisataPopular.enqueue(object: Callback<PopularResponse> {
+            override fun onResponse(call: Call<PopularResponse>, response: Response<PopularResponse>)
+            {
+                showLoading(false)
+                if (response.isSuccessful){
+                    val res = response.body()
+                    Log.d("Response Berhasil List Popular", res.toString())
+                    if (res?.popularAttractions.isNullOrEmpty()){
+                        showLoading(false)
+                        Toast.makeText(requireActivity(), "Fetching data failed!", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        res?.popularAttractions.let { _byPopularData.value = it }
+                    }
+                }
+                else{
+                    showLoading(false)
+                    Log.d("Response Gagal List Popular", response.toString())
+                    Toast.makeText(requireActivity(), "Fetching data failed!", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<PopularResponse>, t: Throwable)
+            {
+                showLoading(false)
+                Log.e(ContentValues.TAG, "onFailure Pupular: ${t.message}")
+                Toast.makeText(requireActivity(), t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
+
     private fun observeByRegionData(){
         byRegionData.observe(viewLifecycleOwner){regionData ->
             val adapter = RegionViewAdapter(regionData)
             binding.homeRvRegion.adapter = adapter
+        }
+    }
+
+    private fun observeByPopularData(){
+        byPopularData.observe(viewLifecycleOwner){popularData ->
+            val adapter = PopularViewAdapter(popularData)
+            binding.homeRvPopular.adapter = adapter
         }
     }
 

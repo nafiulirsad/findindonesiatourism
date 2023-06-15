@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -90,10 +89,6 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
             R.id.nav_profile -> {
                 startActivity(Intent(this@DrawerActivity, ProfileActivity::class.java))
-                Toast.makeText(this, R.string.profileview, Toast.LENGTH_SHORT).show()
-            }
-            R.id.nav_language -> {
-                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
                 Toast.makeText(this, R.string.profileview, Toast.LENGTH_SHORT).show()
             }
             R.id.nav_logout -> {

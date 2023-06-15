@@ -20,22 +20,15 @@
             android:id="@+id/nav_favorite"
             android:icon="@drawable/favorite"
             android:title="@string/favorite" />
-    </group>
 
-    <item android:title="@string/settings" android:iconTint="@color/Primary">
-        <menu>
-            <item
-                android:id="@+id/nav_profile"
-                android:icon="@drawable/account_circle"
-                android:title="@string/profile" />
-            <item
-                android:id="@+id/nav_language"
-                android:icon="@drawable/language"
-                android:title="@string/language" />
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/logout"
-                android:title="@string/logout" />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/account_circle"
+            android:title="@string/profile" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="@string/logout" />
+    </group>
 </menu>
