@@ -63,6 +63,11 @@
     <string name="background_content">Konten Latar Belakang</string>
     <string name="message_title_category">Kategori Pariwisata Indonesia</string>
     <string name="category_name">Category Name</string>
+    <string name="beaches">Pantai</string>
+    <string name="lakes">Danau</string>
+    <string name="waterfall">Air Terjun</string>
+    <string name="mountains">Pegunungan</string>
     <string name="message_title_explore">Jelajahi Tujuan Wisata Anda</string>
     <string name="message_title_favorite">Destinasi Wisata Favorit Saya</string>
+    <string name="number_phone">081xxxxxxxxx</string>
 </resources>

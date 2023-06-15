@@ -49,6 +49,7 @@
     <string name="full_name">Full name</string>
     <string name="fill_in_your_full_name">Fill in your full name</string>
     <string name="fitdevteam_bangkit_academy">fitdevteam@bangkit.academy</string>
+    <string name="number_phone">081xxxxxxxxx</string>
     <string name="username_or_email_address">Username or email address</string>
     <string name="fill_in_your_username_or_email_address">Fill in your username or email address</string>
     <string name="region_image">Region Image</string>
@@ -61,6 +62,10 @@
     <string name="background_content">Background Content</string>
     <string name="message_title_category">Indonesian Tourism Categories</string>
     <string name="category_name">Category Name</string>
+    <string name="beaches">Beaches</string>
+    <string name="lakes">Lakes</string>
+    <string name="waterfall">Waterfall</string>
+    <string name="mountains">Mountains</string>
     <string name="message_title_explore">Explore Your Travel Destination</string>
     <string name="message_title_favorite">My Favorite Travel Destinations</string>
 </resources>
