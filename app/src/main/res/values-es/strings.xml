@@ -69,4 +69,7 @@
     <string name="message_title_explore">Explore su destino de viaje</string>
     <string name="message_title_favorite">Mis destinos de viaje favoritos</string>
     <string name="number_phone">081xxxxxxxxx</string>
+    <string name="rating">Rating</string>
+    <string name="message_profile">Cambie la configuración del perfil de a los datos del perfil de usuario.</string>
+    <string name="save_changes">Guardar cambios</string>
 </resources>

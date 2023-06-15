@@ -68,4 +68,7 @@
     <string name="mountains">Mountains</string>
     <string name="message_title_explore">Explore Your Travel Destination</string>
     <string name="message_title_favorite">My Favorite Travel Destinations</string>
+    <string name="rating">Rating</string>
+    <string name="message_profile">Please change in the profile settings from to user profile data.</string>
+    <string name="save_changes">Save Changes</string>
 </resources>

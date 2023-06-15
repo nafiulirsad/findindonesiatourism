@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="rating"
+            android:text="@string/rating"
             android:textColor="#FFEB3B"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
