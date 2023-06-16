@@ -71,4 +71,8 @@
     <string name="rating">Rating</string>
     <string name="message_profile">Please change in the profile settings from to user profile data.</string>
     <string name="save_changes">Save Changes</string>
+    <string name="type_in_the_destination_you_want">Type in the destination you want</string>
+    <string name="showing_120_tourist_destinations_in_kalimantan">Showing 120 tourist destinations in Kalimantan</string>
+    <string name="beach">Beach</string>
+    <string name="nearby">Nearby</string>
 </resources>

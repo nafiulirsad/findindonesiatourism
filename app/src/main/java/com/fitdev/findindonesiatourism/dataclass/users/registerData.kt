@@ -1,4 +1,4 @@
-package com.fitdev.findindonesiatourism.dataclass
+package com.fitdev.findindonesiatourism.dataclass.users
 
 data class registerData(
     val fullName: String,

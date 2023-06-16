@@ -3,23 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
+    android:layout_height="230dp"
+    android:layout_marginBottom="13dp"
     android:orientation="horizontal"
     app:cardCornerRadius="14dp"
     app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="match_parent"
         android:elevation="50dp"
         tools:ignore="RtlSymmetry">
 
-        <ImageButton
-            android:id="@+id/regionImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ImageView
+            android:id="@+id/exploreImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/region_image"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -28,42 +30,67 @@
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/java" />
 
-        <TextView
-            android:id="@+id/CategoryName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:text="@string/category_name"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/regionName"
+        <ImageView
+            android:id="@+id/exploreBgContent"
+            android:layout_width="411dp"
+            android:layout_height="55dp"
+            android:alpha="0.3"
+            android:contentDescription="@string/background_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/button_disable" />
 
         <TextView
-            android:id="@+id/regionName"
+            android:id="@+id/exploreName"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="1dp"
             android:fontFamily="@font/poppins_semibold"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbars="horizontal"
             android:text="@string/region_name"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/exploreImage"
+            app:layout_constraintEnd_toStartOf="@+id/exploreRating"
+            app:layout_constraintStart_toStartOf="@+id/exploreImage"
+            app:layout_constraintTop_toTopOf="@+id/exploreBgContent" />
+
+        <TextView
+            android:id="@+id/exploreReviewCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="26dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/beach"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/exploreImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="0dp"
+        <RatingBar
+            android:id="@+id/exploreRating"
+            style="@android:style/Widget.Material.Light.RatingBar.Indicator"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="13dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/rating"
-            android:textColor="#FFEB3B"
-            android:textSize="14sp"
+            android:layout_marginEnd="16dp"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/white"
+            android:progressTint="@color/white"
+            android:rating="3.6"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:stepSize="0.5"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/exploreBgContent"
+            app:layout_constraintTop_toTopOf="@+id/exploreBgContent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

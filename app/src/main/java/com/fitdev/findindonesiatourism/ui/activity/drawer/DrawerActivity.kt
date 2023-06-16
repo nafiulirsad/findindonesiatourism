@@ -1,8 +1,10 @@
 package com.fitdev.findindonesiatourism.ui.activity.drawer
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -14,6 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import coil.load
 import com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity
@@ -24,6 +27,8 @@ import com.fitdev.findindonesiatourism.ui.fragment.FavoriteFragment
 import com.fitdev.findindonesiatourism.ui.fragment.HomeFragment
 import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ActivityDrawerBinding
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.material.navigation.NavigationView
 
 class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -32,8 +37,16 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
+    private val permissionCode = 1000
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var myLocation: String = "-7.293677, 112.739013"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        getCurrentLocation()
+
         binding = ActivityDrawerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -46,11 +59,14 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         toggle.syncState()
 
         if(savedInstanceState == null){
+            val homeFragment = HomeFragment()
+            homeFragment.arguments = Bundle().apply {
+                putString(HomeFragment.ARG_MY_LOCATION, myLocation)
+            }
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomeFragment()).commit()
+                .replace(R.id.fragment_container, homeFragment).commit()
             binding.navView.setCheckedItem(R.id.nav_home)
         }
-
 
         sharedPreferences = getSharedPreferences("MY_SESS", Context.MODE_PRIVATE)
         setProfil()
@@ -68,26 +84,33 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> {
-                supportActionBar?.title = "Home"
+                val homeFragment = HomeFragment()
+                homeFragment.arguments = Bundle().apply {
+                    putString(HomeFragment.ARG_MY_LOCATION, "-7.293677, 112.739013")
+                }
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, HomeFragment()).commit()
+                    .replace(R.id.fragment_container, homeFragment).commit()
+                binding.navView.setCheckedItem(R.id.nav_home)
             }
             R.id.nav_explore -> {
+                binding.navView.setCheckedItem(R.id.nav_explore)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, ExploreFragment()).commit()
-                Toast.makeText(this, R.string.exploreview, Toast.LENGTH_SHORT).show()
             }
             R.id.nav_category -> {
+                binding.navView.setCheckedItem(R.id.nav_category)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, CategoryFragment()).commit()
                 Toast.makeText(this, R.string.categoryview, Toast.LENGTH_SHORT).show()
             }
             R.id.nav_favorite -> {
+                binding.navView.setCheckedItem(R.id.nav_favorite)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, FavoriteFragment()).commit()
                 Toast.makeText(this, R.string.favoriteview, Toast.LENGTH_SHORT).show()
             }
             R.id.nav_profile -> {
+                binding.navView.setCheckedItem(R.id.nav_profile)
                 startActivity(Intent(this@DrawerActivity, ProfileActivity::class.java))
                 Toast.makeText(this, R.string.profileview, Toast.LENGTH_SHORT).show()
             }
@@ -139,6 +162,50 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             val i = Intent(this, LoginActivity::class.java)
             startActivity(i)
             finish()
+        }
+    }
+
+    private fun getCurrentLocation() {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+        fusedLocationClient.lastLocation
+            .addOnSuccessListener { location ->
+                myLocation = "${location.latitude}, ${location.longitude}"
+            }
+            .addOnFailureListener {
+                myLocation = "-7.282501, 112.794629"
+            }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            permissionCode -> {
+                if (grantResults.isNotEmpty() &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    getCurrentLocation()
+                } else {
+                    Toast.makeText(this, "You need to grant permission to access location",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }
