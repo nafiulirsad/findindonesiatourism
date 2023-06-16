@@ -2,6 +2,8 @@ package com.fitdev.findindonesiatourism.remote.api.users
 
 import com.fitdev.findindonesiatourism.remote.response.login.LoginResponse
 import com.fitdev.findindonesiatourism.remote.response.register.RegisterResponse
+import com.fitdev.findindonesiatourism.remote.response.update.UpdateResponse
+import com.google.android.material.imageview.ShapeableImageView
 import retrofit2.http.POST
 import retrofit2.Call
 import retrofit2.http.Field
@@ -25,4 +27,15 @@ interface ApiService {
         @Field("usernameOrEmail") usernameOrEmail: String,
         @Field("password") password: String
     ): Call<LoginResponse>
+
+    @FormUrlEncoded
+    @POST("users/update")
+    fun update(
+        @Field("profileImage") profileImage: ShapeableImageView,
+        @Field("username") username: String,
+        @Field("email") email: String,
+        @Field("password") password: String,
+        @Field("fullname") fullname: String,
+        @Field("phoneNumber") phoneNumber: String
+    ) : Call<UpdateResponse>
 }
