@@ -78,7 +78,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun updateProfile() {
-        val profile = binding.shapeableImageView
+        val profile = "default.png"
         val username = binding.profilesUsername.text.toString()
         val email = binding.profilesEmail.text.toString()
         val password = binding.profilesPassword.text.toString()
