@@ -101,7 +101,6 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 binding.navView.setCheckedItem(R.id.nav_category)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, CategoryFragment()).commit()
-                Toast.makeText(this, R.string.categoryview, Toast.LENGTH_SHORT).show()
             }
             R.id.nav_favorite -> {
                 binding.navView.setCheckedItem(R.id.nav_favorite)

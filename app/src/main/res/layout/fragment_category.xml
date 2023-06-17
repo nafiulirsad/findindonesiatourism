@@ -1,232 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/Background">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/category_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/categoriesTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/message_title_category"
+            android:textColor="@color/Primary"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/message_title_category"
-                android:textColor="@color/Primary"
-                android:textSize="34sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoriesRv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categoriesTitle"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_row_category" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:elevation="50dp"
-                    tools:ignore="RtlSymmetry">
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ImageView
-                        android:id="@+id/item_category"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/beach"/>
-
-                    <TextView
-                        android:id="@+id/CategoryName"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/poppins_bold"
-                        android:gravity="center"
-                        android:text="@string/beaches"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:textAllCaps="true"
-                        android:outlineProvider="paddedBounds"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/item_category"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:elevation="50dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <ImageView
-                        android:id="@+id/item_category2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/destination"/>
-
-                    <TextView
-                        android:id="@+id/CategoryName2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/poppins_bold"
-                        android:gravity="center"
-                        android:text="@string/lakes"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:textAllCaps="true"
-                        android:outlineProvider="paddedBounds"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/item_category2"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:elevation="50dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <ImageView
-                        android:id="@+id/item_category3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/waterfall"/>
-
-                    <TextView
-                        android:id="@+id/CategoryName3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/poppins_bold"
-                        android:gravity="center"
-                        android:text="@string/waterfall"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:textAllCaps="true"
-                        android:outlineProvider="paddedBounds"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/item_category3"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:elevation="50dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <ImageView
-                        android:id="@+id/item_category4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/mountain"/>
-
-                    <TextView
-                        android:id="@+id/CategoryName4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/poppins_bold"
-                        android:gravity="center"
-                        android:text="@string/mountains"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:textAllCaps="true"
-                        android:outlineProvider="paddedBounds"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/item_category4"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/category_rv_list"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="24dp"-->
-<!--                android:layout_marginTop="16dp"-->
-<!--                android:layout_marginEnd="24dp"-->
-<!--                tools:itemCount="1"-->
-<!--                tools:listitem="@layout/item_row_category" />-->
-
-        </LinearLayout>
-
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
