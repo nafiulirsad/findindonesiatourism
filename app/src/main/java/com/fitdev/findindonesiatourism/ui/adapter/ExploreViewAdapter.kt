@@ -19,13 +19,13 @@ class ExploreViewAdapter(private val exploreDataList : List<ResultsItem?>?) : Re
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val popularData = exploreDataList?.get(position)
+        val exploreData = exploreDataList?.get(position)
         with(holder){
-            this.binding.exploreName.text = popularData?.name
+            this.binding.exploreName.text = exploreData?.name
             binding.exploreName.movementMethod = ScrollingMovementMethod()
-            this.binding.exploreReviewCount.text = "${popularData?.userRatingsTotal} Reviews"
-            this.binding.exploreRating.rating = popularData?.rating.toString().toFloat()
-            this.binding.exploreImage.load(photoUrl(popularData?.photos?.get(0)?.photoReference))
+            this.binding.exploreReviewCount.text = "${exploreData?.userRatingsTotal} Reviews"
+            this.binding.exploreRating.rating = exploreData?.rating.toString().toFloat()
+            this.binding.exploreImage.load(photoUrl(exploreData?.photos?.get(0)?.photoReference))
         }
     }
 

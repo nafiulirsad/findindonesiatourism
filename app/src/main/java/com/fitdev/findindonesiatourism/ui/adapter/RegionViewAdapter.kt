@@ -33,8 +33,8 @@ class RegionViewAdapter(private val regionDataList : List<RegionData>) : Recycle
                 val activity = this.itemView.context as AppCompatActivity
                 val exploreFragment = ExploreFragment()
                 exploreFragment.arguments = Bundle().apply {
-                    putString(ExploreFragment.ARG_DESTINATION_COUNT, regionData.destinationCount.toString())
-                    putString(ExploreFragment.ARG_REGION_NAME, regionKeyword)
+                    putString(ExploreFragment.ARG_SEARCH_PARAMS, regionKeyword)
+                    putString(ExploreFragment.ARG_SEARCH_TYPE, "Region")
                 }
                 activity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, exploreFragment).addToBackStack(null).commit()
             }

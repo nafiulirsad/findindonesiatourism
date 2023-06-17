@@ -1,15 +1,11 @@
 package com.fitdev.findindonesiatourism.ui.adapter
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.fitdev.findindonesiatourism.remote.response.gmaps.nearbysearch.ResultsItem
-import com.fitdev.findindonesiatourism.ui.fragment.ExploreFragment
-import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ItemHomeNearbyBinding
 
 class NearbyViewAdapter(private val nearbyDataList : List<ResultsItem?>?) : RecyclerView.Adapter<NearbyViewAdapter.ViewHolder>() {
@@ -24,19 +20,9 @@ class NearbyViewAdapter(private val nearbyDataList : List<ResultsItem?>?) : Recy
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val nearbyData = nearbyDataList?.get(position)
         with(holder){
-            val activity = this.itemView.context as AppCompatActivity
             this.binding.nearbyName.text = nearbyData?.name
             this.binding.nearbyVillage.text = nearbyData?.vicinity
             this.binding.nearbyImage.load(photoUrl(nearbyData?.photos?.get(0)?.photoReference))
-
-            this.itemView.setOnClickListener{
-                val regionKeyword: String? = nearbyDataList?.get(position)?.name
-                val exploreFragment = ExploreFragment()
-                exploreFragment.arguments = Bundle().apply {
-                    putString(ExploreFragment.ARG_REGION_NAME, regionKeyword)
-                }
-                activity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, exploreFragment).addToBackStack(null).commit()
-            }
         }
     }
 

@@ -38,8 +38,8 @@ class ExploreFragment : Fragment() {
     private val byExploreData: LiveData<List<ResultsItem?>?> = _byExploreData
 
     private lateinit var myDialog: Dialog
-    private var regionName: String? = null
-    private var destinationCount: String? = null
+    private var searchParams: String? = null
+    private var searchType: String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View
     {
@@ -54,8 +54,8 @@ class ExploreFragment : Fragment() {
         val activity = activity as AppCompatActivity
         activity.supportActionBar?.title = getString(R.string.explore)
         arguments?.let {
-            regionName = it.getString(ARG_REGION_NAME)
-            destinationCount = it.getString(ARG_DESTINATION_COUNT)
+            searchParams = it.getString(ARG_SEARCH_PARAMS)
+            searchType = it.getString(ARG_SEARCH_TYPE)
         }
 
         binding.exploreRv.layoutManager = LinearLayoutManager(requireContext())
@@ -68,17 +68,24 @@ class ExploreFragment : Fragment() {
                     val inputSearchText = binding.exploreInputSearch.text
                     Log.d("Input Search", inputSearchText.toString())
                     getDataBySearch(inputSearchText.toString())
+                    //searchLog(inputSearchText.toString())
                 true
             } else {
                 false
             }
         }
-        if(regionName.isNullOrEmpty()){
+        if(searchParams.isNullOrEmpty()){
             binding.exploreShowing.visibility = View.GONE
         }
         else{
-            binding.exploreShowing.text = "Showing $destinationCount tourist destinations in $regionName"
-            getDataByRegion()
+            var query = ""
+            if (searchType == "Region"){
+                query = "Tourist Attractions in $searchParams Island, Indonesia"
+            }
+            else if (searchType == "Category"){
+                query = "The Most Beautiful $searchParams Tourist Attractions in Indonesia"
+            }
+            getDataBySearch(query)
         }
         observeExploreData()
     }
@@ -94,7 +101,7 @@ class ExploreFragment : Fragment() {
                 if (response.isSuccessful){
                     val placeRes: List<ResultsItem?>? = response.body()?.results
                     _byExploreData.value = placeRes
-                    binding.exploreShowing.text = "Showing ${placeRes?.size} tourist destinations from $search"
+                    binding.exploreShowing.text = "Showing ${placeRes?.size} tourist destinations from $searchParams"
                     Log.d("Response (Popular)", placeRes.toString())
                 }
                 else{
@@ -114,39 +121,12 @@ class ExploreFragment : Fragment() {
         })
     }
 
-    private fun getDataByRegion(){
-        showLoading(true)
-        val query = "Tourist Attractions in $regionName Island, Indonesia"
-        val getPlace = GoogleMapsConfig.getGoogleMapsService().getSearchPlaceByQuery(BuildConfig.API_KEY, query, "true", "20000")
-        getPlace.enqueue(object : Callback<TextSearchResponse> {
-            override fun onResponse(call: Call<TextSearchResponse>, response: Response<TextSearchResponse>)
-            {
-                showLoading(false)
-                Log.d("Response (Pulau)", response.body().toString())
-                if(response.isSuccessful){
-                    val placeRes: List<ResultsItem?>? = response.body()?.results
-                    placeRes?.let {
-                        _byExploreData.value = placeRes
-                    }
-                }
-                else{
-                    Log.d("Response Gagal (Region)", response.toString())
-                    Toast.makeText(requireActivity(), "Fetching data failed!", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<TextSearchResponse>, t: Throwable) {
-                showLoading(false)
-                Log.e(ContentValues.TAG, "onFailure: ${t.message}")
-                Toast.makeText(requireActivity(), t.message, Toast.LENGTH_LONG).show()
-            }
-        })
-    }
-
+    @SuppressLint("SetTextI18n")
     private fun observeExploreData(){
         byExploreData.observe(viewLifecycleOwner){exploreData ->
             val adapter = ExploreViewAdapter(exploreData)
             binding.exploreRv.adapter = adapter
+            binding.exploreShowing.text = "Showing ${exploreData?.size} tourist destinations in $searchParams"
         }
     }
 
@@ -177,7 +157,7 @@ class ExploreFragment : Fragment() {
     }
 
     companion object{
-        const val ARG_REGION_NAME = "region_name"
-        const val ARG_DESTINATION_COUNT = "destination_count"
+        const val ARG_SEARCH_PARAMS = "region_name"
+        const val ARG_SEARCH_TYPE = "search_type"
     }
 }

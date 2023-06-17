@@ -3,43 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="230dp"
+    android:layout_marginBottom="13dp"
     android:orientation="horizontal"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
     app:cardCornerRadius="14dp"
     app:cardElevation="2dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="match_parent"
         android:elevation="50dp"
         tools:ignore="RtlSymmetry">
 
-        <ImageButton
-            android:id="@+id/item_category"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ImageView
+            android:id="@+id/categoriesImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/region_image"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/java" />
+
+        <ImageView
+            android:id="@+id/categoriesBgContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.3"
+            android:contentDescription="@string/background_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/java"/>
+            app:layout_constraintTop_toTopOf="@+id/categoriesImage"
+            app:srcCompat="@drawable/button_disable" />
 
         <TextView
-            android:id="@+id/CategoryName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/categoriesName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
-            android:text="@string/category_name"
-            android:textSize="25sp"
-            android:textColor="@color/white"
+            android:letterSpacing="0.1"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbars="horizontal"
+            android:text="@string/region_name"
+            android:textAlignment="center"
             android:textAllCaps="true"
-            android:outlineProvider="paddedBounds"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/item_category"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/categoriesImage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>
