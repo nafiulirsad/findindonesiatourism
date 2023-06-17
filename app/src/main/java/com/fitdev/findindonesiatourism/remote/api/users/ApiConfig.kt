@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
     fun getApiService(): ApiService {
+
         val loggingInterceptor =
             Interceptor { chain ->
                 val req = chain.request()

@@ -15,7 +15,4 @@ interface ApiService {
     fun getAllWisata(
         @Query("query") query: String
     ): Call<WisataResponse>
-
-    @GET("users/popular?location=Indonesia&mostVisited=true")
-    fun getAllWisataPopular(): Call<PopularResponse>
 }
