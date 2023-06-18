@@ -8,7 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.fitdev.findindonesiatourism.dataclass.RegionData
+import com.fitdev.findindonesiatourism.ui.fragment.CategoryFragment
+import com.fitdev.findindonesiatourism.ui.fragment.DetailsFragment
 import com.fitdev.findindonesiatourism.ui.fragment.ExploreFragment
+import com.fitdev.findindonesiatourism.ui.fragment.FavoriteFragment
+import com.fitdev.findindonesiatourism.ui.fragment.HomeFragment
 import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ItemHomeRegionBinding
 
@@ -37,6 +41,10 @@ class RegionViewAdapter(private val regionDataList : List<RegionData>) : Recycle
                     putString(ExploreFragment.ARG_SEARCH_TYPE, "Region")
                 }
                 activity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, exploreFragment).addToBackStack(null).commit()
+                activity.supportFragmentManager.beginTransaction().remove(HomeFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(CategoryFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(FavoriteFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(DetailsFragment()).commit()
             }
         }
     }

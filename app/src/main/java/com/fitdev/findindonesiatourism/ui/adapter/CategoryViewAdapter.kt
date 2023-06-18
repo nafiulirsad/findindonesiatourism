@@ -8,7 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.fitdev.findindonesiatourism.remote.response.categories.CategoriesDataItem
+import com.fitdev.findindonesiatourism.ui.fragment.CategoryFragment
+import com.fitdev.findindonesiatourism.ui.fragment.DetailsFragment
 import com.fitdev.findindonesiatourism.ui.fragment.ExploreFragment
+import com.fitdev.findindonesiatourism.ui.fragment.FavoriteFragment
+import com.fitdev.findindonesiatourism.ui.fragment.HomeFragment
 import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ItemRowCategoryBinding
 
@@ -36,6 +40,10 @@ class CategoryViewAdapter(private val categoryDataList : List<CategoriesDataItem
                     putString(ExploreFragment.ARG_SEARCH_TYPE, "Category")
                 }
                 activity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, exploreFragment).addToBackStack(null).commit()
+                activity.supportFragmentManager.beginTransaction().remove(HomeFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(CategoryFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(FavoriteFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(DetailsFragment()).commit()
             }
         }
     }

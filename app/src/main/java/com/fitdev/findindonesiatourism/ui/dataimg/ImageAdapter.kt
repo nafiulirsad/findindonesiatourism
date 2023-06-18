@@ -8,12 +8,9 @@ import coil.transform.RoundedCornersTransformation
 import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ListSlideBinding
 
-class ImageAdapter(private val items: List<ImageData>) :
-    RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-    inner class ImageViewHolder(itemView: ListSlideBinding) :
-        RecyclerView.ViewHolder(itemView.root) {
+class ImageAdapter(private val items: List<ImageData>) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>(){
+    inner class ImageViewHolder(itemView: ListSlideBinding) : RecyclerView.ViewHolder(itemView.root) {
         private val binding = itemView
-
         fun bind(data: ImageData) {
             with(binding) {
                 imgGambar.load(data.imgUrl){
@@ -24,16 +21,9 @@ class ImageAdapter(private val items: List<ImageData>) :
         }
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ImageAdapter.ImageViewHolder {
-        val view = ListSlideBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageAdapter.ImageViewHolder
+    {
+        val view = ListSlideBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ImageViewHolder(view)
     }
 

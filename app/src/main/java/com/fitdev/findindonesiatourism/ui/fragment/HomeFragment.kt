@@ -50,10 +50,6 @@ class HomeFragment : Fragment() {
     private lateinit var myDialog: Dialog
     private lateinit var myLocation: String
 
-    init {
-        byRegionList.clear()
-        _byRegionData.value = byRegionList
-    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         myDialog = Dialog(requireActivity())
@@ -65,6 +61,9 @@ class HomeFragment : Fragment() {
         arguments?.let {
             myLocation = it.getString(ARG_MY_LOCATION).toString()
         }
+
+        byRegionList.clear()
+        _byRegionData.value = byRegionList
 
         val activity = activity as AppCompatActivity
         activity.supportActionBar?.title = getString(R.string.home)

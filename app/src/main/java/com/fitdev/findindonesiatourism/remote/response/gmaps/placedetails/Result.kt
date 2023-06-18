@@ -17,7 +17,7 @@ data class Result(
 	val icon: String? = null,
 
 	@field:SerializedName("rating")
-	val rating: Int? = null,
+	val rating: String? = null,
 
 	@field:SerializedName("icon_background_color")
 	val iconBackgroundColor: String? = null,

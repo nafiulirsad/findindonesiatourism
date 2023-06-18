@@ -72,4 +72,23 @@
     <string name="rating">Rating</string>
     <string name="message_profile">Bitte ändern Sie die Profileinstellungen von auf Benutzerprofildaten.</string>
     <string name="save_changes">Änderungen speichern</string>
+    <string name="type_in_the_destination_you_want">Geben Sie das gewünschte Ziel ein</string>
+    <string name="showing_120_tourist_destinations_in_kalimantan">Zeigt 120 Touristenziele in Kalimantan</string>
+    <string name="beach">Strand</string>
+    <string name="nearby">Nahe</string>
+    <string name="hello_blank_fragment">Hallo leeres Fragment</string>
+    <string name="details">Einzelheiten</string>
+    <string name="monday_6_00_am_6_00_pm">Monday: 6:00 AM – 6:00 PM</string>
+    <string name="gunung_kupang_kec_curah_dami_kabupaten_bondowoso_jawa_timur_68251_indonesia">Gunung, Kupang, Kec. Curah Dami, Kabupaten Bondowoso, Jawa Timur 68251, Indonesia</string>
+    <string name="pantai_tiga_warna_malang">Dreifarbiger Strand von Malang</string>
+    <string name="place_status">Platzstatus</string>
+    <string name="opening_days_and_hours">Öffnungstage und -zeiten</string>
+    <string name="address">Adresse</string>
+    <string name="maps">Karten</string>
+    <string name="more_information">Mehr Informationen</string>
+    <string name="accommodation_and_lodging">Unterkunft und Unterkunft</string>
+    <string name="more_photos">Mehr Fotos</string>
+    <string name="reviews">Rezensionen</string>
+    <string name="open_now">Jetzt geöffnet</string>
+    <string name="add_to_my_favorite">Zu „Mein Favorit“ hinzufügen</string>
 </resources>

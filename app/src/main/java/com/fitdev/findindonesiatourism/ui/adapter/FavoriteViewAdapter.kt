@@ -2,38 +2,41 @@ package com.fitdev.findindonesiatourism.ui.adapter
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.fitdev.findindonesiatourism.remote.response.gmaps.nearbysearch.ResultsItem
+import com.fitdev.findindonesiatourism.database.Favorite
 import com.fitdev.findindonesiatourism.ui.fragment.CategoryFragment
 import com.fitdev.findindonesiatourism.ui.fragment.DetailsFragment
 import com.fitdev.findindonesiatourism.ui.fragment.ExploreFragment
 import com.fitdev.findindonesiatourism.ui.fragment.FavoriteFragment
 import com.fitdev.findindonesiatourism.ui.fragment.HomeFragment
 import com.fitdev.myapplication.R
-import com.fitdev.myapplication.databinding.ItemHomeNearbyBinding
+import com.fitdev.myapplication.databinding.ItemRowFavoriteBinding
 
-class NearbyViewAdapter(private val nearbyDataList : List<ResultsItem?>?) : RecyclerView.Adapter<NearbyViewAdapter.ViewHolder>() {
-    inner class ViewHolder(val binding: ItemHomeNearbyBinding) : RecyclerView.ViewHolder(binding.root)
+class FavoriteViewAdapter(private val favoriteDataList : List<Favorite?>?) : RecyclerView.Adapter<FavoriteViewAdapter.ViewHolder>() {
+    inner class ViewHolder(val binding: ItemRowFavoriteBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemHomeNearbyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemRowFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val nearbyData = nearbyDataList?.get(position)
+        val favoriteData = favoriteDataList?.get(position)
         with(holder){
-            this.binding.nearbyName.text = nearbyData?.name
-            this.binding.nearbyVillage.text = nearbyData?.vicinity
-            this.binding.nearbyImage.load(photoUrl(nearbyData?.photos?.get(0)?.photoReference))
+            this.binding.favoriteName.text = favoriteData?.placeName
+            binding.favoriteName.movementMethod = ScrollingMovementMethod()
+            this.binding.favoriteReviewCount.text = "${favoriteData?.placeRatingsTotal} Reviews"
+            this.binding.favoriteRating.rating = favoriteData?.placeRating.toString().toFloat()
+            this.binding.favoriteImage.load(photoUrl(favoriteData?.placePhotos))
 
             this.itemView.setOnClickListener{
-                val placeId: String? = nearbyData?.placeId
+                val placeId: String? = favoriteData?.placeId
                 val activity = this.itemView.context as AppCompatActivity
                 val detailsFragment = DetailsFragment()
                 detailsFragment.arguments = Bundle().apply {
@@ -49,7 +52,7 @@ class NearbyViewAdapter(private val nearbyDataList : List<ResultsItem?>?) : Recy
     }
 
     override fun getItemCount(): Int {
-        return nearbyDataList?.size ?: 0
+        return favoriteDataList?.size ?: 0
     }
 
     private fun photoUrl(photoReference: String?): String{

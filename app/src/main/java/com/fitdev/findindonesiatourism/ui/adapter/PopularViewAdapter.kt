@@ -1,10 +1,18 @@
 package com.fitdev.findindonesiatourism.ui.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.fitdev.findindonesiatourism.remote.response.gmaps.textsearch.ResultsItem
+import com.fitdev.findindonesiatourism.ui.fragment.CategoryFragment
+import com.fitdev.findindonesiatourism.ui.fragment.DetailsFragment
+import com.fitdev.findindonesiatourism.ui.fragment.ExploreFragment
+import com.fitdev.findindonesiatourism.ui.fragment.FavoriteFragment
+import com.fitdev.findindonesiatourism.ui.fragment.HomeFragment
+import com.fitdev.myapplication.R
 import com.fitdev.myapplication.databinding.ItemHomePopularBinding
 
 class PopularViewAdapter(private val popularDataList : List<ResultsItem?>?) : RecyclerView.Adapter<PopularViewAdapter.ViewHolder>() {
@@ -21,6 +29,20 @@ class PopularViewAdapter(private val popularDataList : List<ResultsItem?>?) : Re
             this.binding.popularName.text = popularData?.name
             this.binding.popularRating.rating = popularData?.rating.toString().toFloat()
             this.binding.popularImage.load(photoUrl(popularData?.photos?.get(0)?.photoReference))
+
+            this.itemView.setOnClickListener{
+                val placeId: String? = popularData?.placeId
+                val activity = this.itemView.context as AppCompatActivity
+                val detailsFragment = DetailsFragment()
+                detailsFragment.arguments = Bundle().apply {
+                    putString(DetailsFragment.ARG_PLACE_ID, placeId)
+                }
+                activity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, detailsFragment).addToBackStack(null).commit()
+                activity.supportFragmentManager.beginTransaction().remove(HomeFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(CategoryFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(FavoriteFragment()).commit()
+                activity.supportFragmentManager.beginTransaction().remove(ExploreFragment()).commit()
+            }
         }
     }
 

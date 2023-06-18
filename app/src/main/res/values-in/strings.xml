@@ -54,7 +54,7 @@
     <string name="username_or_email_address">Nama pengguna atau alamat email</string>
     <string name="fill_in_your_username_or_email_address">Isi nama pengguna atau alamat email Anda</string>
     <string name="region_image">Gambar Wilayah</string>
-    <string name="welcome_to_find_indonesia_tourism_app">Selamat datang di Temukan Aplikasi Pariwisata Indonesia!</string>
+    <string name="welcome_to_find_indonesia_tourism_app">Selamat datang di Aplikasi Temukan Pariwisata Indonesia!</string>
     <string name="region">Wilayah</string>
     <string name="popular">Populer</string>
     <string name="recommendation">Rekomendasi</string>
@@ -73,4 +73,23 @@
     <string name="rating">Rating</string>
     <string name="message_profile">Harap ubah pengaturan profil dari menjadi data profil pengguna.</string>
     <string name="save_changes">Simpan Perubahan</string>
+    <string name="type_in_the_destination_you_want">Ketik tujuan yang Anda inginkan</string>
+    <string name="showing_120_tourist_destinations_in_kalimantan">Menampilkan 120 destinasi wisata di Kalimantan</string>
+    <string name="beach">Pantai</string>
+    <string name="nearby">Di dekat sini</string>
+    <string name="hello_blank_fragment">Halo fragmen kosong</string>
+    <string name="details">Detail</string>
+    <string name="monday_6_00_am_6_00_pm">Monday: 6:00 AM – 6:00 PM</string>
+    <string name="gunung_kupang_kec_curah_dami_kabupaten_bondowoso_jawa_timur_68251_indonesia">Gunung, Kupang, Kec. Curah Dami, Kabupaten Bondowoso, Jawa Timur 68251, Indonesia</string>
+    <string name="pantai_tiga_warna_malang">Pantai Tiga Warna Malang</string>
+    <string name="place_status">Status Tempat</string>
+    <string name="opening_days_and_hours">Hari dan Jam Buka</string>
+    <string name="address">Alamat</string>
+    <string name="maps">Peta</string>
+    <string name="more_information">Informasi Lebih Lanjut</string>
+    <string name="accommodation_and_lodging">Akomodasi dan Penginapan</string>
+    <string name="more_photos">Lebih banyak foto</string>
+    <string name="reviews">Ulasan</string>
+    <string name="open_now">Buka sekarang</string>
+    <string name="add_to_my_favorite">Tambahkan ke Favorit Saya</string>
 </resources>

@@ -72,4 +72,23 @@
     <string name="rating">Rating</string>
     <string name="message_profile">Пожалуйста, измените в настройках профиля с на данные профиля пользователя.</string>
     <string name="save_changes">Сохранить изменения</string>
+    <string name="type_in_the_destination_you_want">Введите пункт назначения, который вы хотите</string>
+    <string name="showing_120_tourist_destinations_in_kalimantan">Показаны 120 туристических направлений на Калимантане</string>
+    <string name="beach">Пляж</string>
+    <string name="nearby">Рядом</string>
+    <string name="hello_blank_fragment">Привет пустой фрагмент</string>
+    <string name="details">Подробности</string>
+    <string name="monday_6_00_am_6_00_pm">Monday: 6:00 AM – 6:00 PM</string>
+    <string name="gunung_kupang_kec_curah_dami_kabupaten_bondowoso_jawa_timur_68251_indonesia">Gunung, Kupang, Kec. Curah Dami, Kabupaten Bondowoso, Jawa Timur 68251, Indonesia</string>
+    <string name="pantai_tiga_warna_malang">Трехцветный пляж Маланга</string>
+    <string name="place_status">Статус места</string>
+    <string name="opening_days_and_hours">Дни и часы работы</string>
+    <string name="address">Адрес</string>
+    <string name="maps">Карты</string>
+    <string name="more_information">Больше информации</string>
+    <string name="accommodation_and_lodging">Размещение и проживание</string>
+    <string name="more_photos">Больше фотографий</string>
+    <string name="reviews">Отзывы</string>
+    <string name="open_now">Открой сейчас</string>
+    <string name="add_to_my_favorite">Добавить в избранное</string>
 </resources>

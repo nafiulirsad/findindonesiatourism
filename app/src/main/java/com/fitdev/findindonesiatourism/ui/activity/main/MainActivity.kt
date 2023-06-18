@@ -52,17 +52,17 @@ class MainActivity : AppCompatActivity() {
     private fun setSlider() {
         list.add(
             ImageData(
-                imgUrl = "https://aplikasijpm.online/fitproject/image1-min.jpg"
+                imgUrl = "https://aplikasijpm.online/fitproject/slider/image1-min.jpg"
             )
         )
         list.add(
             ImageData(
-                imgUrl = "https://aplikasijpm.online/fitproject/image2-min.jpg"
+                imgUrl = "https://aplikasijpm.online/fitproject/slider/image2-min.jpg"
             )
         )
         list.add(
             ImageData(
-                imgUrl = "https://aplikasijpm.online/fitproject/image3-min.jpg"
+                imgUrl = "https://aplikasijpm.online/fitproject/slider/image3-min.jpg"
             )
         )
 

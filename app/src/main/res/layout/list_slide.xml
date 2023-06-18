@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/img_gambar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="240dp"
+        android:contentDescription="@string/slider"
         android:scaleType="centerCrop"
-        android:src="@color/ic_launcher_background"
-        android:contentDescription="@string/slider" />
+        android:src="@color/ic_launcher_background" />
 
 </LinearLayout>

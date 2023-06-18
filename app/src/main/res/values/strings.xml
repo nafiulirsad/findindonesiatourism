@@ -75,4 +75,20 @@
     <string name="showing_120_tourist_destinations_in_kalimantan">Showing 120 tourist destinations in Kalimantan</string>
     <string name="beach">Beach</string>
     <string name="nearby">Nearby</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="details">Details</string>
+    <string name="monday_6_00_am_6_00_pm">Monday: 6:00 AM – 6:00 PM</string>
+    <string name="pantai_tiga_warna_malang">Malang Three Color Beach</string>
+    <string name="place_status">Place Status</string>
+    <string name="opening_days_and_hours">Opening Days and Hours</string>
+    <string name="address">Address</string>
+    <string name="maps">Maps</string>
+    <string name="more_information">More Information</string>
+    <string name="accommodation_and_lodging">Accommodation and Lodging</string>
+    <string name="more_photos">More Photos</string>
+    <string name="reviews">Reviews</string>
+    <string name="open_now">Open Now</string>
+    <string name="gunung_kupang_kec_curah_dami_kabupaten_bondowoso_jawa_timur_68251_indonesia">Gunung, Kupang, Kec. Curah Dami, Kabupaten Bondowoso, Jawa Timur 68251, Indonesia</string>
+    <string name="add_to_my_favorite">Add to My Favorite</string>
 </resources>

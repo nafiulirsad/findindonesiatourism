@@ -22,6 +22,7 @@ import coil.load
 import com.fitdev.findindonesiatourism.ui.activity.login.LoginActivity
 import com.fitdev.findindonesiatourism.ui.activity.profile.ProfileActivity
 import com.fitdev.findindonesiatourism.ui.fragment.CategoryFragment
+import com.fitdev.findindonesiatourism.ui.fragment.DetailsFragment
 import com.fitdev.findindonesiatourism.ui.fragment.ExploreFragment
 import com.fitdev.findindonesiatourism.ui.fragment.FavoriteFragment
 import com.fitdev.findindonesiatourism.ui.fragment.HomeFragment
@@ -30,6 +31,7 @@ import com.fitdev.myapplication.databinding.ActivityDrawerBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.navigation.NavigationView
+
 
 class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -84,41 +86,55 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> {
+                binding.navView.setCheckedItem(R.id.nav_home)
                 val homeFragment = HomeFragment()
                 homeFragment.arguments = Bundle().apply {
                     putString(HomeFragment.ARG_MY_LOCATION, "-7.293677, 112.739013")
                 }
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, homeFragment).commit()
-                binding.navView.setCheckedItem(R.id.nav_home)
+                supportFragmentManager.beginTransaction().remove(ExploreFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(CategoryFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(FavoriteFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(DetailsFragment()).commit()
             }
             R.id.nav_explore -> {
                 binding.navView.setCheckedItem(R.id.nav_explore)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, ExploreFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(HomeFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(CategoryFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(FavoriteFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(DetailsFragment()).commit()
             }
             R.id.nav_category -> {
                 binding.navView.setCheckedItem(R.id.nav_category)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, CategoryFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(ExploreFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(HomeFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(FavoriteFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(DetailsFragment()).commit()
             }
             R.id.nav_favorite -> {
                 binding.navView.setCheckedItem(R.id.nav_favorite)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, FavoriteFragment()).commit()
-                Toast.makeText(this, R.string.favoriteview, Toast.LENGTH_SHORT).show()
+                supportFragmentManager.beginTransaction().remove(ExploreFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(CategoryFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(HomeFragment()).commit()
+                supportFragmentManager.beginTransaction().remove(DetailsFragment()).commit()
             }
             R.id.nav_profile -> {
                 binding.navView.setCheckedItem(R.id.nav_profile)
                 startActivity(Intent(this@DrawerActivity, ProfileActivity::class.java))
-                Toast.makeText(this, R.string.profileview, Toast.LENGTH_SHORT).show()
             }
             R.id.nav_logout -> {
                 logoutAndExit()
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
-        return true
+        return false
     }
 
     private fun setProfil(){

@@ -61,7 +61,7 @@ class ProfileActivity : AppCompatActivity() {
         val number = sharedPreferences.getString("PHONE_NUMBER", "").toString()
 
         val profileView: View = binding.profileActivity
-        val profileImage: ImageView = profileView.findViewById(R.id.shapeableImageView)
+        val profileImage: ImageView = binding.shapeableImageView
         val profileFullName: TextView = profileView.findViewById(R.id.profilesFullName)
         val profileUsername: TextView = profileView.findViewById(R.id.profilesUsername)
         val inputProfileFullName: TextView = profileView.findViewById(R.id.inputProfilesFullName)
@@ -96,8 +96,8 @@ class ProfileActivity : AppCompatActivity() {
                 if (response.isSuccessful && responseBody != null) {
                     sharedPreferences = getSharedPreferences("MY_SESS", Context.MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
-                    val userData: List<UserUpdateItem>? = responseBody.userUpdated
-                    if (!userData.isNullOrEmpty()) { // Periksa apakah userData tidak null dan tidak kosong
+                    val userData: List<UserUpdateItem> = responseBody.userUpdated
+                    if (userData.isNotEmpty()) { // Periksa apakah userData tidak null dan tidak kosong
                         val user = userData[0]
                         editor.putString("ID", user.id)
                         editor.putString("EMAIL", user.email)
@@ -114,7 +114,7 @@ class ProfileActivity : AppCompatActivity() {
                         responseBody.message,
                         Toast.LENGTH_SHORT
                     ).show()
-                    responseBody.message?.let { Log.d("ProfileActivity", it) }
+                    responseBody.message.let { Log.d("ProfileActivity", it) }
                 } else {
                     Toast.makeText(
                         this@ProfileActivity,
@@ -149,7 +149,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
         return true
     }
 }
